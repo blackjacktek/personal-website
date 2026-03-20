@@ -1,0 +1,214 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #0f0f0f;
+  --surface: #181818;
+  --border:  #262626;
+  --text:    #e8e8e8;
+  --muted:   #666;
+  --accent:  #7c6af7;
+  --accent-h:#9b8dfb;
+  --radius:  10px;
+  --max-w:   600px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  padding: 64px 24px 96px;
+}
+
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* ── Hero ── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 56px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, #c084fc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero h1 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  margin-bottom: 2px;
+}
+
+.role {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.bio {
+  font-size: 15px;
+  color: #aaa;
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+/* ── Section headings ── */
+h2 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* ── Projects ── */
+.projects { margin-bottom: 52px; }
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  background: #1a1830;
+}
+
+.project-info h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.project-info p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  background: rgba(124, 106, 247, 0.12);
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Contact ── */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  padding: 10px 13px;
+  outline: none;
+  transition: border-color 0.15s;
+  resize: vertical;
+}
+
+input::placeholder, textarea::placeholder { color: var(--muted); }
+input:focus, textarea:focus { border-color: var(--accent); }
+
+textarea { min-height: 110px; }
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 9px 20px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+button[type="submit"]:hover   { background: var(--accent-h); }
+button[type="submit"]:active  { transform: scale(0.97); }
+button[type="submit"]:disabled { opacity: 0.6; cursor: default; }
+
+.form-status { font-size: 13px; color: var(--muted); }
+.form-status.success { color: #6ee7b7; }
+.form-status.error   { color: #fca5a5; }
+
+/* ── Footer ── */
+footer {
+  max-width: var(--max-w);
+  margin: 72px auto 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  body { padding-top: 40px; }
+  .field-row { grid-template-columns: 1fr; }
+}

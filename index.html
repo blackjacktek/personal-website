@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="avatar">
+      <!-- Replace with: <img src="avatar.jpg" alt="Leo" /> -->
+      <span>L</span>
+    </div>
+    <h1>Leo</h1>
+    <p class="role">Software Engineer</p>
+    <p class="bio">
+      I build things for the web and beyond. Interested in developer tools,
+      AI-assisted workflows, and clean interfaces. Currently exploring new
+      ideas and open to interesting collaborations.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+
+      <a class="project-card" href="#" target="_blank" rel="noopener">
+        <div class="project-info">
+          <h3>Project Alpha</h3>
+          <p>A developer tool that makes local environment setup faster.</p>
+        </div>
+        <span class="tag">TypeScript</span>
+      </a>
+
+      <a class="project-card" href="#" target="_blank" rel="noopener">
+        <div class="project-info">
+          <h3>Project Beta</h3>
+          <p>An open-source library for data processing at scale.</p>
+        </div>
+        <span class="tag">Python</span>
+      </a>
+
+      <a class="project-card" href="#" target="_blank" rel="noopener">
+        <div class="project-info">
+          <h3>Project Gamma</h3>
+          <p>A minimal focus app with no distractions.</p>
+        </div>
+        <span class="tag">React</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Get in touch</h2>
+    <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+      <div class="field-row">
+        <input type="text"  name="name"    placeholder="Your name"       required />
+        <input type="email" name="email"   placeholder="your@email.com"  required />
+      </div>
+      <input   type="text" name="subject"  placeholder="Subject" />
+      <textarea name="message" placeholder="What's on your mind?" required></textarea>
+      <div class="form-footer">
+        <button type="submit">Send message</button>
+        <span class="form-status" id="form-status"></span>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer>© 2026 Leo</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+    const btn = e.target.querySelector('button[type="submit"]');
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    // Wire up to a real service (Formspree, Resend, etc.) here.
+    setTimeout(() => {
+      status.textContent = "Message sent — I'll get back to you soon.";
+      status.className = 'form-status success';
+      e.target.reset();
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }, 800);
+  }
+</script>
+</body>
+</html>
