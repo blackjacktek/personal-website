@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leo</title>
+  <title>Leo — Filmmaker & Creator</title>
   <link rel="stylesheet" href="style.css" />
   <script>
-    // Apply saved theme before paint to avoid flash
     (function() {
       const t = localStorage.getItem('theme') ||
         (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
@@ -16,61 +15,90 @@
 </head>
 <body>
 
-<button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">🌙</button>
+<button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">🌙</button>
 
 <main>
 
-  <!-- Hero -->
+  <!-- ── Hero ── -->
   <section class="hero">
     <div class="avatar">
       <!-- Replace with: <img src="avatar.jpg" alt="Leo" /> -->
       <span>L</span>
     </div>
-    <h1>Leo</h1>
-    <p class="role">Software Engineer</p>
+    <h1>I'm Leo.</h1>
+    <p class="role">Filmmaker · Brand Photographer · Creator Consultant</p>
     <p class="bio">
-      I build things for the web and beyond. Interested in developer tools,
-      AI-assisted workflows, and clean interfaces. Currently exploring new
-      ideas and open to interesting collaborations.
+      I make cinematic content for brands — films and photos that feel real,
+      shot in everyday environments with honest storytelling. No studios,
+      no scripts. When I'm not on set, I consult with creators on their
+      content, systems, and brand, and build tools that simplify the
+      creative process.
     </p>
+    <div class="social-links">
+      <a href="#" target="_blank" rel="noopener">YouTube</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">Twitter / X</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </section>
 
-  <!-- Projects -->
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
+  <!-- ── Services ── -->
+  <section class="services">
+    <h2>What I do</h2>
+    <div class="services-grid">
 
-      <a class="project-card" href="#" target="_blank" rel="noopener">
-        <div class="project-info">
-          <h3>Project Alpha</h3>
-          <p>A developer tool that makes local environment setup faster.</p>
-        </div>
-        <span class="tag">TypeScript</span>
-      </a>
+      <div class="service-card">
+        <span class="service-icon">🎬</span>
+        <h3>Brand Video</h3>
+        <p>Cinematic, story-driven video for brands. Products in real life — daily use, real people, honest moments.</p>
+        <a href="#contact" class="service-link">Work with me →</a>
+      </div>
 
-      <a class="project-card" href="#" target="_blank" rel="noopener">
-        <div class="project-info">
-          <h3>Project Beta</h3>
-          <p>An open-source library for data processing at scale.</p>
-        </div>
-        <span class="tag">Python</span>
-      </a>
+      <div class="service-card">
+        <span class="service-icon">📷</span>
+        <h3>Brand Photography</h3>
+        <p>High-quality product photography shot in real-world environments. No white backgrounds — just life.</p>
+        <a href="#contact" class="service-link">Work with me →</a>
+      </div>
 
-      <a class="project-card" href="#" target="_blank" rel="noopener">
-        <div class="project-info">
-          <h3>Project Gamma</h3>
-          <p>A minimal focus app with no distractions.</p>
-        </div>
-        <span class="tag">React</span>
-      </a>
+      <div class="service-card">
+        <span class="service-icon">🎯</span>
+        <h3>Creator Consulting</h3>
+        <p>One-on-one online sessions. We work on your content strategy, workflow, systems, and brand direction.</p>
+        <a href="#contact" class="service-link">Book a session →</a>
+      </div>
 
     </div>
   </section>
 
-  <!-- Shop -->
+  <!-- ── Brands ── -->
+  <section class="brands">
+    <h2>Brands I've worked with</h2>
+    <div class="brands-grid">
+      <!-- Replace each div with an <img src="brand-logo.svg" alt="Brand Name" /> -->
+      <div class="brand-slot"></div>
+      <div class="brand-slot"></div>
+      <div class="brand-slot"></div>
+      <div class="brand-slot"></div>
+      <div class="brand-slot"></div>
+      <div class="brand-slot"></div>
+    </div>
+  </section>
+
+  <!-- ── Shop ── -->
   <section class="shop">
-    <h2>Shop</h2>
+    <h2>Digital products</h2>
     <div class="shop-grid">
+
+      <a class="shop-card" href="#" target="_blank" rel="noopener">
+        <div class="shop-thumb shop-thumb--notion">
+          <!-- Replace with: <img src="notion-templates.jpg" alt="Notion Templates" /> -->
+        </div>
+        <div class="shop-info">
+          <h3>Notion Templates</h3>
+          <p>Systems and workflows built for creators.</p>
+        </div>
+      </a>
 
       <a class="shop-card" href="#" target="_blank" rel="noopener">
         <div class="shop-thumb shop-thumb--wallpapers">
@@ -88,33 +116,38 @@
         </div>
         <div class="shop-info">
           <h3>Lightroom Presets</h3>
-          <p>My editing style, ready to apply.</p>
-        </div>
-      </a>
-
-      <a class="shop-card" href="#" target="_blank" rel="noopener">
-        <div class="shop-thumb shop-thumb--gear">
-          <!-- Replace with: <img src="gear.jpg" alt="Affiliate Gear" /> -->
-        </div>
-        <div class="shop-info">
-          <h3>Affiliate Gear</h3>
-          <p>Tools &amp; gear I actually use and recommend.</p>
+          <p>My cinematic editing style, ready to apply.</p>
         </div>
       </a>
 
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="contact">
-    <h2>Get in touch</h2>
+  <!-- ── Newsletter ── -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <h2>Newsletter</h2>
+      <p class="newsletter-title">Behind the Lens</p>
+      <p class="newsletter-sub">The creative process, unfiltered — gear, techniques, brand work, and what I'm building next. No spam, just the good stuff.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" novalidate>
+        <input type="email" name="email" placeholder="your@email.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <span class="newsletter-status" id="newsletter-status"></span>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section class="contact" id="contact">
+    <h2>Work with me</h2>
+    <p class="contact-intro">Have a brand project, photography shoot, or want to book a consulting session? I'd love to hear about it.</p>
     <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
       <div class="field-row">
         <input type="text"  name="name"    placeholder="Your name"       required />
         <input type="email" name="email"   placeholder="your@email.com"  required />
       </div>
-      <input   type="text" name="subject"  placeholder="Subject" />
-      <textarea name="message" placeholder="What's on your mind?" required></textarea>
+      <input type="text" name="subject" placeholder="Brand video · Photography · Consulting · Other" />
+      <textarea name="message" placeholder="Tell me about your project…" required></textarea>
       <div class="form-footer">
         <button type="submit">Send message</button>
         <span class="form-status" id="form-status"></span>
@@ -124,12 +157,19 @@
 
 </main>
 
-<footer>© 2026 Leo</footer>
+<footer>
+  <span>© 2026 Leo</span>
+  <div class="footer-links">
+    <a href="#" target="_blank" rel="noopener">YouTube</a>
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" target="_blank" rel="noopener">Twitter / X</a>
+  </div>
+</footer>
 
 <script>
   // ── Theme toggle ──
-  const root   = document.documentElement;
-  const btn    = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+  const btn  = document.getElementById('theme-toggle');
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
@@ -137,29 +177,38 @@
     localStorage.setItem('theme', theme);
   }
 
-  // Set correct icon on load
   applyTheme(root.getAttribute('data-theme') || 'dark');
-
   btn.addEventListener('click', () => {
     applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
+
+  // ── Newsletter ──
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const status = document.getElementById('newsletter-status');
+    const b = e.target.querySelector('button');
+    b.disabled = true; b.textContent = 'Subscribing…';
+    // Wire to Mailchimp, ConvertKit, Resend, etc.
+    setTimeout(() => {
+      status.textContent = "You're in. Talk soon.";
+      status.className = 'newsletter-status success';
+      e.target.reset();
+      b.disabled = false; b.textContent = 'Subscribe';
+    }, 800);
+  }
 
   // ── Contact form ──
   function handleSubmit(e) {
     e.preventDefault();
     const status = document.getElementById('form-status');
-    const btn = e.target.querySelector('button[type="submit"]');
-
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    // Wire up to a real service (Formspree, Resend, etc.) here.
+    const b = e.target.querySelector('button[type="submit"]');
+    b.disabled = true; b.textContent = 'Sending…';
+    // Wire to Formspree, Resend, etc.
     setTimeout(() => {
-      status.textContent = "Message sent — I'll get back to you soon.";
+      status.textContent = "Got it — I'll be in touch soon.";
       status.className = 'form-status success';
       e.target.reset();
-      btn.disabled = false;
-      btn.textContent = 'Send message';
+      b.disabled = false; b.textContent = 'Send message';
     }, 800);
   }
 </script>
