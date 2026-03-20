@@ -1,15 +1,31 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Dark theme (default) ── */
 :root {
   --bg:      #0f0f0f;
   --surface: #181818;
   --border:  #262626;
   --text:    #e8e8e8;
   --muted:   #666;
+  --bio:     #aaa;
+  --card-hover-bg: #1a1830;
   --accent:  #7c6af7;
   --accent-h:#9b8dfb;
   --radius:  10px;
   --max-w:   600px;
+}
+
+/* ── Light theme ── */
+:root[data-theme="light"] {
+  --bg:      #f9f9f9;
+  --surface: #ffffff;
+  --border:  #e4e4e4;
+  --text:    #111111;
+  --muted:   #888;
+  --bio:     #555;
+  --card-hover-bg: #f0eeff;
+  --accent:  #6255e0;
+  --accent-h:#7c6af7;
 }
 
 html { scroll-behavior: smooth; }
@@ -22,12 +38,34 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   padding: 64px 24px 96px;
+  transition: background 0.2s, color 0.2s;
 }
 
 main {
   max-width: var(--max-w);
   margin: 0 auto;
 }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: border-color 0.15s, background 0.2s, color 0.15s;
+  z-index: 100;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ── Hero ── */
 .hero {
@@ -74,7 +112,7 @@ main {
 
 .bio {
   font-size: 15px;
-  color: #aaa;
+  color: var(--bio);
   max-width: 480px;
   line-height: 1.7;
 }
@@ -114,7 +152,7 @@ h2 {
 
 .project-card:hover {
   border-color: var(--accent);
-  background: #1a1830;
+  background: var(--card-hover-bg);
 }
 
 .project-info h3 {
@@ -162,7 +200,7 @@ input, textarea {
   font-family: inherit;
   padding: 10px 13px;
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, background 0.2s, color 0.2s;
   resize: vertical;
 }
 
@@ -196,8 +234,8 @@ button[type="submit"]:active  { transform: scale(0.97); }
 button[type="submit"]:disabled { opacity: 0.6; cursor: default; }
 
 .form-status { font-size: 13px; color: var(--muted); }
-.form-status.success { color: #6ee7b7; }
-.form-status.error   { color: #fca5a5; }
+.form-status.success { color: #059669; }
+.form-status.error   { color: #dc2626; }
 
 /* ── Footer ── */
 footer {

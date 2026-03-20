@@ -5,8 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leo</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // Apply saved theme before paint to avoid flash
+    (function() {
+      const t = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
+
+<button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">🌙</button>
+
 <main>
 
   <!-- Hero -->
@@ -78,6 +89,24 @@
 <footer>© 2026 Leo</footer>
 
 <script>
+  // ── Theme toggle ──
+  const root   = document.documentElement;
+  const btn    = document.getElementById('theme-toggle');
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    btn.textContent = theme === 'dark' ? '🌙' : '☀️';
+    localStorage.setItem('theme', theme);
+  }
+
+  // Set correct icon on load
+  applyTheme(root.getAttribute('data-theme') || 'dark');
+
+  btn.addEventListener('click', () => {
+    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+
+  // ── Contact form ──
   function handleSubmit(e) {
     e.preventDefault();
     const status = document.getElementById('form-status');
