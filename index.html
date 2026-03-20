@@ -3,214 +3,522 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leo — Filmmaker & Creator</title>
+  <title>Blackjacktek — Cinematic Content Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script>
-    (function() {
-      const t = localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-      document.documentElement.setAttribute('data-theme', t);
+    (function(){
+      const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');
+      document.documentElement.setAttribute('data-theme',t);
     })();
   </script>
 </head>
 <body>
 
-<button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">Blackjacktek</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-end">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+  </div>
+</nav>
 
-<main>
-
-  <!-- ── Hero ── -->
-  <section class="hero">
-    <div class="avatar">
-      <!-- Replace with: <img src="avatar.jpg" alt="Leo" /> -->
-      <span>L</span>
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="label">[ Content Creator in Tech &amp; Lifestyle ]</span>
+    <h1>I turn tech products<br>into <em>cinematic stories</em><br>that sell.</h1>
+    <p class="hero-sub">I'm Blackjacktek — filmmaker, brand photographer, and creator consultant. I partner with tech brands to produce content that's not just beautiful, it drives real results.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-ghost">Let's Talk →</a>
     </div>
-    <h1>I'm Leo.</h1>
-    <p class="role">Filmmaker · Brand Photographer · Creator Consultant</p>
-    <p class="bio">
-      I make cinematic content for brands — films and photos that feel real,
-      shot in everyday environments with honest storytelling. No studios,
-      no scripts. When I'm not on set, I consult with creators on their
-      content, systems, and brand, and build tools that simplify the
-      creative process.
-    </p>
-    <div class="social-links">
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num"><span class="count" data-target="4">0</span>+</div>
+        <div class="stat-label">Years of<br>Experience</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <div class="stat-num"><span class="count" data-target="15">0</span>+</div>
+        <div class="stat-label">Brands<br>Worked With</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <div class="stat-num"><span class="count" data-target="100">0</span>%</div>
+        <div class="stat-label">Client<br>Satisfaction</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img">
+      <!-- Replace with: <img src="hero.jpg" alt="Blackjacktek" /> -->
+      <span class="hero-placeholder">BJT</span>
+    </div>
+    <div class="hero-float hero-float--a">
+      <span class="float-icon">🎬</span>
+      <div>
+        <div class="float-title">Cinematic First</div>
+        <div class="float-sub">Every frame matters</div>
+      </div>
+    </div>
+    <div class="hero-float hero-float--b">
+      <span class="float-icon">🌍</span>
+      <div>
+        <div class="float-title">Available Worldwide</div>
+        <div class="float-sub">Remote &amp; on-location</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     MARQUEE
+══════════════════════════════════════ -->
+<div class="marquee-section">
+  <span class="marquee-label">Trusted by —</span>
+  <div class="marquee-track">
+    <div class="marquee-inner">
+      <span>Nomad</span><span class="sep">·</span>
+      <span>MOFT</span><span class="sep">·</span>
+      <span>Lamborghini</span><span class="sep">·</span>
+      <span>Even Realities</span><span class="sep">·</span>
+      <span>Plaud</span><span class="sep">·</span>
+      <span>ESR</span><span class="sep">·</span>
+      <span>Spigen</span><span class="sep">·</span>
+      <span>Nomad</span><span class="sep">·</span>
+      <span>MOFT</span><span class="sep">·</span>
+      <span>Lamborghini</span><span class="sep">·</span>
+      <span>Even Realities</span><span class="sep">·</span>
+      <span>Plaud</span><span class="sep">·</span>
+      <span>ESR</span><span class="sep">·</span>
+      <span>Spigen</span><span class="sep">·</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SERVICES
+══════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="section-header">
+    <span class="label">[ What I Do ]</span>
+    <h2>Creating content that brands<br>actually want to share.</h2>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-top">
+        <span class="service-num">[01]</span>
+        <span class="service-count">20+ Projects</span>
+      </div>
+      <div class="service-img service-img--video"></div>
+      <h3>Cinematic Brand Video</h3>
+      <p>Story-driven video for tech brands. Your product in its natural habitat — real life, real people, real moments. No studio setups.</p>
+      <div class="service-tags">
+        <span>Storytelling</span><span>Product Films</span><span>Lifestyle Reels</span><span>Brand Docs</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-top">
+        <span class="service-num">[02]</span>
+        <span class="service-count">15+ Projects</span>
+      </div>
+      <div class="service-img service-img--photo"></div>
+      <h3>Brand Photography</h3>
+      <p>High-quality product photography shot in real-world environments. No white backgrounds — just life, beautifully composed.</p>
+      <div class="service-tags">
+        <span>Product Shots</span><span>Lifestyle Photos</span><span>Editorial</span><span>Social Assets</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-top">
+        <span class="service-num">[03]</span>
+        <span class="service-count">1-on-1 Sessions</span>
+      </div>
+      <div class="service-img service-img--consult"></div>
+      <h3>Creator Consulting</h3>
+      <p>Private sessions for creators ready to level up — content strategy, workflow systems, brand deal outreach, and more.</p>
+      <div class="service-tags">
+        <span>Content Strategy</span><span>Systems</span><span>Brand Deals</span><span>Growth</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-top">
+        <span class="service-num">[04]</span>
+        <span class="service-count">3 Products</span>
+      </div>
+      <div class="service-img service-img--digital"></div>
+      <h3>Digital Products</h3>
+      <p>Tools built for the creator community — Notion templates, Lightroom presets, and curated desktop wallpapers. Instant download.</p>
+      <div class="service-tags">
+        <span>Notion Templates</span><span>LR Presets</span><span>Wallpapers</span><span>Download</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     WORK
+══════════════════════════════════════ -->
+<section class="work" id="work">
+  <div class="section-header">
+    <span class="label">[ Selected Work ]</span>
+    <h2>Stories told for<br>remarkable brands.</h2>
+  </div>
+  <div class="work-grid">
+
+    <a class="work-card" href="#">
+      <div class="work-thumb work-thumb--nomad"></div>
+      <div class="work-meta">
+        <span class="work-cat">[ Brand Video ]</span>
+        <h3>Nomad</h3>
+      </div>
+    </a>
+
+    <a class="work-card" href="#">
+      <div class="work-thumb work-thumb--moft"></div>
+      <div class="work-meta">
+        <span class="work-cat">[ Product Photography ]</span>
+        <h3>MOFT</h3>
+      </div>
+    </a>
+
+    <a class="work-card" href="#">
+      <div class="work-thumb work-thumb--lamborghini"></div>
+      <div class="work-meta">
+        <span class="work-cat">[ Lifestyle Content ]</span>
+        <h3>Lamborghini</h3>
+      </div>
+    </a>
+
+    <a class="work-card" href="#">
+      <div class="work-thumb work-thumb--evenrealities"></div>
+      <div class="work-meta">
+        <span class="work-cat">[ Tech Film ]</span>
+        <h3>Even Realities</h3>
+      </div>
+    </a>
+
+    <a class="work-card" href="#">
+      <div class="work-thumb work-thumb--plaud"></div>
+      <div class="work-meta">
+        <span class="work-cat">[ Brand Story ]</span>
+        <h3>Plaud</h3>
+      </div>
+    </a>
+
+    <a class="work-card" href="#">
+      <div class="work-thumb work-thumb--esr"></div>
+      <div class="work-meta">
+        <span class="work-cat">[ Lifestyle Photography ]</span>
+        <h3>ESR × Spigen</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PRICING
+══════════════════════════════════════ -->
+<section class="pricing" id="pricing">
+  <div class="section-header">
+    <span class="label">[ Pricing ]</span>
+    <h2>Flexible packages for<br>every brand stage.</h2>
+  </div>
+  <div class="pricing-grid">
+
+    <div class="pricing-card">
+      <div class="plan-header">
+        <span class="plan-name">Starter</span>
+        <div class="plan-price">$500<span class="plan-per">/project</span></div>
+      </div>
+      <p class="plan-desc">For brands ready to explore cinematic content for their social channels.</p>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span>1 short-form video (60–90s)</li>
+        <li><span class="chk">✓</span>10 edited photos</li>
+        <li><span class="chk">✓</span>1 revision round</li>
+        <li><span class="chk">✓</span>Social-ready formats</li>
+        <li><span class="chk">✓</span>7-day turnaround</li>
+        <li><span class="chk off">—</span>Full licensing rights</li>
+        <li><span class="chk off">—</span>Strategy session</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost plan-btn">Get Started</a>
+    </div>
+
+    <div class="pricing-card pricing-card--featured">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-header">
+        <span class="plan-name">Brand Partner</span>
+        <div class="plan-price">$1,200<span class="plan-per">/project</span></div>
+      </div>
+      <p class="plan-desc">For brands serious about content that's not just seen — it converts.</p>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span>2 short-form videos</li>
+        <li><span class="chk">✓</span>25 edited photos</li>
+        <li><span class="chk">✓</span>3 revision rounds</li>
+        <li><span class="chk">✓</span>All formats &amp; ratios</li>
+        <li><span class="chk">✓</span>14-day turnaround</li>
+        <li><span class="chk">✓</span>Full licensing rights</li>
+        <li><span class="chk">✓</span>1 strategy session</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary plan-btn">Get Started</a>
+    </div>
+
+    <div class="pricing-card pricing-card--custom">
+      <div class="plan-header">
+        <span class="plan-name">Custom</span>
+        <div class="plan-price">Let's<span class="plan-per"> talk</span></div>
+      </div>
+      <p class="plan-desc">A campaign, a product launch, a multi-day production — let's build something big together.</p>
+      <ul class="plan-features">
+        <li><span class="chk">✓</span>Fully tailored scope</li>
+        <li><span class="chk">✓</span>Multi-day productions</li>
+        <li><span class="chk">✓</span>Campaign packages</li>
+        <li><span class="chk">✓</span>Travel included</li>
+        <li><span class="chk">✓</span>Dedicated timeline</li>
+        <li><span class="chk">✓</span>Full creative direction</li>
+        <li><span class="chk">✓</span>Ongoing partnership</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost plan-btn">Get a Quote</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section class="testimonials">
+  <div class="section-header">
+    <span class="label">[ Kind Words ]</span>
+    <h2>What brands say about<br>working together.</h2>
+  </div>
+  <div class="testi-grid">
+
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p>"The cinematic quality delivered exceeded everything we expected. Our product had never looked so aspirational — the storytelling approach was exactly what we needed for launch."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AM</div>
+        <div>
+          <div class="testi-name">Alex M.</div>
+          <div class="testi-role">Marketing Manager · Nomad</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p>"Seamless from brief to final delivery. He understood our product and brand identity immediately — no lengthy back-and-forth, no hand-holding. Just exceptional work, on time."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SK</div>
+        <div>
+          <div class="testi-name">Sarah K.</div>
+          <div class="testi-role">Brand Director · MOFT</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p>"The lifestyle photography made our accessories feel premium and desirable. Shooting products in real environments is something our in-house team just can't replicate. Genuinely impressive."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MR</div>
+        <div>
+          <div class="testi-name">Marco R.</div>
+          <div class="testi-role">Content Lead · ESR</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p>"I booked a consulting session not knowing what to expect. I left with a new content strategy, cleaner systems, and a clear path to my first brand deal. Honestly a total game-changer."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JL</div>
+        <div>
+          <div class="testi-name">Jamie L.</div>
+          <div class="testi-role">Creator · 45K on YouTube</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="faq-layout">
+    <div class="faq-left">
+      <span class="label">[ FAQ ]</span>
+      <h2>Questions you<br>might have.</h2>
+      <p class="faq-sub">Don't see your question here? I'm happy to answer personally.</p>
+      <a href="#contact" class="btn btn-ghost">Ask Me Directly →</a>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What types of brands do you work with?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>I specialise in tech and lifestyle brands — accessories, gadgets, productivity tools, wearables, and premium lifestyle products. If your product fits into someone's real daily life, I can make it look extraordinary.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What's your typical turnaround time?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Starter projects are delivered within 7 business days. Brand Partner packages take around 14 days. Custom productions get a dedicated timeline agreed during briefing. I always communicate clearly on deadlines.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you travel for shoots?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes — for Custom projects and large productions, I'm available for travel both domestically and internationally. Travel costs are factored into the custom quote. I'm also fully set up for remote concept shoots.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What's included in a consulting session?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Each session is 60 minutes, fully tailored to you. We can cover content strategy, niche positioning, workflow setup, monetisation, brand deal outreach, or whatever is most pressing for where you are in your creator journey.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you offer revisions?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Starter includes 1 revision round, Brand Partner includes 3. Custom projects include revisions as agreed in the scope. Because I work from a thorough brief upfront, major revisions are rarely needed.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER / CONTACT
+══════════════════════════════════════ -->
+<footer class="footer" id="contact">
+  <div class="footer-cta">
+    <span class="label">[ Let's Work Together ]</span>
+    <h2>Have a brand project<br>or something in mind?</h2>
+    <p class="footer-cta-sub">For brand video, photography, consulting, and partnerships — reach out directly.</p>
+    <a href="mailto:hello@blackjacktek.com" class="btn btn-primary btn-lg">Let's Talk →</a>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-logo">Blackjacktek</span>
+    <nav class="footer-nav">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="footer-social">
       <a href="#" target="_blank" rel="noopener">YouTube</a>
       <a href="#" target="_blank" rel="noopener">Instagram</a>
-      <a href="#" target="_blank" rel="noopener">Twitter / X</a>
-      <a href="#" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" target="_blank" rel="noopener">X / Twitter</a>
     </div>
-  </section>
-
-  <!-- ── Services ── -->
-  <section class="services">
-    <h2>What I do</h2>
-    <div class="services-grid">
-
-      <div class="service-card">
-        <span class="service-icon">🎬</span>
-        <h3>Brand Video</h3>
-        <p>Cinematic, story-driven video for brands. Products in real life — daily use, real people, honest moments.</p>
-        <a href="#contact" class="service-link">Work with me →</a>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">📷</span>
-        <h3>Brand Photography</h3>
-        <p>High-quality product photography shot in real-world environments. No white backgrounds — just life.</p>
-        <a href="#contact" class="service-link">Work with me →</a>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">🎯</span>
-        <h3>Creator Consulting</h3>
-        <p>One-on-one online sessions. We work on your content strategy, workflow, systems, and brand direction.</p>
-        <a href="#contact" class="service-link">Book a session →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Brands ── -->
-  <section class="brands">
-    <h2>Brands I've worked with</h2>
-    <div class="brands-grid">
-      <!-- Replace each div with an <img src="brand-logo.svg" alt="Brand Name" /> -->
-      <div class="brand-slot"></div>
-      <div class="brand-slot"></div>
-      <div class="brand-slot"></div>
-      <div class="brand-slot"></div>
-      <div class="brand-slot"></div>
-      <div class="brand-slot"></div>
-    </div>
-  </section>
-
-  <!-- ── Shop ── -->
-  <section class="shop">
-    <h2>Digital products</h2>
-    <div class="shop-grid">
-
-      <a class="shop-card" href="#" target="_blank" rel="noopener">
-        <div class="shop-thumb shop-thumb--notion">
-          <!-- Replace with: <img src="notion-templates.jpg" alt="Notion Templates" /> -->
-        </div>
-        <div class="shop-info">
-          <h3>Notion Templates</h3>
-          <p>Systems and workflows built for creators.</p>
-        </div>
-      </a>
-
-      <a class="shop-card" href="#" target="_blank" rel="noopener">
-        <div class="shop-thumb shop-thumb--wallpapers">
-          <!-- Replace with: <img src="wallpapers.jpg" alt="Wallpapers" /> -->
-        </div>
-        <div class="shop-info">
-          <h3>Wallpapers</h3>
-          <p>Minimal desktop &amp; mobile wallpapers.</p>
-        </div>
-      </a>
-
-      <a class="shop-card" href="#" target="_blank" rel="noopener">
-        <div class="shop-thumb shop-thumb--presets">
-          <!-- Replace with: <img src="presets.jpg" alt="Lightroom Presets" /> -->
-        </div>
-        <div class="shop-info">
-          <h3>Lightroom Presets</h3>
-          <p>My cinematic editing style, ready to apply.</p>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ── Newsletter ── -->
-  <section class="newsletter">
-    <div class="newsletter-inner">
-      <h2>Newsletter</h2>
-      <p class="newsletter-title">Behind the Lens</p>
-      <p class="newsletter-sub">The creative process, unfiltered — gear, techniques, brand work, and what I'm building next. No spam, just the good stuff.</p>
-      <form class="newsletter-form" onsubmit="handleNewsletter(event)" novalidate>
-        <input type="email" name="email" placeholder="your@email.com" required />
-        <button type="submit">Subscribe</button>
-      </form>
-      <span class="newsletter-status" id="newsletter-status"></span>
-    </div>
-  </section>
-
-  <!-- ── Contact ── -->
-  <section class="contact" id="contact">
-    <h2>Work with me</h2>
-    <p class="contact-intro">Have a brand project, photography shoot, or want to book a consulting session? I'd love to hear about it.</p>
-    <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
-      <div class="field-row">
-        <input type="text"  name="name"    placeholder="Your name"       required />
-        <input type="email" name="email"   placeholder="your@email.com"  required />
-      </div>
-      <input type="text" name="subject" placeholder="Brand video · Photography · Consulting · Other" />
-      <textarea name="message" placeholder="Tell me about your project…" required></textarea>
-      <div class="form-footer">
-        <button type="submit">Send message</button>
-        <span class="form-status" id="form-status"></span>
-      </div>
-    </form>
-  </section>
-
-</main>
-
-<footer>
-  <span>© 2026 Leo</span>
-  <div class="footer-links">
-    <a href="#" target="_blank" rel="noopener">YouTube</a>
-    <a href="#" target="_blank" rel="noopener">Instagram</a>
-    <a href="#" target="_blank" rel="noopener">Twitter / X</a>
+  </div>
+  <div class="footer-copy">
+    <span>© 2026 Blackjacktek. All rights reserved.</span>
+    <button class="theme-toggle" id="theme-toggle-foot" aria-label="Toggle theme">🌙</button>
   </div>
 </footer>
 
 <script>
-  // ── Theme toggle ──
-  const root = document.documentElement;
-  const btn  = document.getElementById('theme-toggle');
+// ── Theme ──────────────────────────────
+const root = document.documentElement;
+function applyTheme(t) {
+  root.setAttribute('data-theme', t);
+  document.querySelectorAll('#theme-toggle,#theme-toggle-foot').forEach(b => b.textContent = t==='dark'?'🌙':'☀️');
+  localStorage.setItem('theme', t);
+}
+applyTheme(root.getAttribute('data-theme') || 'dark');
+document.querySelectorAll('#theme-toggle,#theme-toggle-foot').forEach(b =>
+  b.addEventListener('click', () => applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'))
+);
 
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    btn.textContent = theme === 'dark' ? '🌙' : '☀️';
-    localStorage.setItem('theme', theme);
+// ── Stat counters ──────────────────────
+function animateCount(el) {
+  const target = +el.dataset.target, dur = 1200;
+  let start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    const p = Math.min((ts - start) / dur, 1);
+    el.textContent = Math.floor(p * target);
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = target;
   }
-
-  applyTheme(root.getAttribute('data-theme') || 'dark');
-  btn.addEventListener('click', () => {
-    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  requestAnimationFrame(step);
+}
+new IntersectionObserver((entries, obs) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.count').forEach(animateCount);
+      obs.unobserve(e.target);
+    }
   });
+}, { threshold: 0.6 }).observe(document.querySelector('.stats-row'));
 
-  // ── Newsletter ──
-  function handleNewsletter(e) {
-    e.preventDefault();
-    const status = document.getElementById('newsletter-status');
-    const b = e.target.querySelector('button');
-    b.disabled = true; b.textContent = 'Subscribing…';
-    // Wire to Mailchimp, ConvertKit, Resend, etc.
-    setTimeout(() => {
-      status.textContent = "You're in. Talk soon.";
-      status.className = 'newsletter-status success';
-      e.target.reset();
-      b.disabled = false; b.textContent = 'Subscribe';
-    }, 800);
-  }
+// ── FAQ accordion ──────────────────────
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      i.querySelector('.faq-icon').textContent = '+';
+    });
+    if (!open) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      btn.querySelector('.faq-icon').textContent = '×';
+    }
+  });
+});
 
-  // ── Contact form ──
-  function handleSubmit(e) {
-    e.preventDefault();
-    const status = document.getElementById('form-status');
-    const b = e.target.querySelector('button[type="submit"]');
-    b.disabled = true; b.textContent = 'Sending…';
-    // Wire to Formspree, Resend, etc.
-    setTimeout(() => {
-      status.textContent = "Got it — I'll be in touch soon.";
-      status.className = 'form-status success';
-      e.target.reset();
-      b.disabled = false; b.textContent = 'Send message';
-    }, 800);
-  }
+// ── Nav scroll shadow ──────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
 </script>
 </body>
 </html>
