@@ -25,6 +25,7 @@
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#shop">Shop</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -231,6 +232,96 @@
         <h3>ESR × Spigen</h3>
       </div>
     </a>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SHOP / DIGITAL PRODUCTS
+══════════════════════════════════════ -->
+<section class="shop" id="shop">
+  <div class="section-header">
+    <span class="label">[ Digital Products ]</span>
+    <h2>Tools I built for creators,<br>available for instant download.</h2>
+  </div>
+
+  <!-- Featured product: CreatorHQ -->
+  <div class="shop-featured">
+    <div class="shop-carousel" id="chq-carousel">
+      <div class="shop-slides" id="chq-slides">
+        <img src="CreatorHQ_Dashboard.png" alt="CreatorHQ — Dashboard overview" class="shop-slide" />
+        <img src="CreatorHQ_Calendar.png" alt="CreatorHQ — Content calendar" class="shop-slide" />
+        <img src="CreatorHQ_YouTube.png" alt="CreatorHQ — YouTube hub" class="shop-slide" />
+        <img src="CreatorHQ_Shorts.png" alt="CreatorHQ — Shorts tracker" class="shop-slide" />
+        <img src="CreatorHQ_Tasks.png" alt="CreatorHQ — Tasks & goals" class="shop-slide" />
+      </div>
+      <button class="shop-prev" id="chq-prev" aria-label="Previous image">‹</button>
+      <button class="shop-next" id="chq-next" aria-label="Next image">›</button>
+      <div class="shop-dots" id="chq-dots">
+        <button class="shop-dot active" data-i="0" aria-label="Image 1"></button>
+        <button class="shop-dot" data-i="1" aria-label="Image 2"></button>
+        <button class="shop-dot" data-i="2" aria-label="Image 3"></button>
+        <button class="shop-dot" data-i="3" aria-label="Image 4"></button>
+        <button class="shop-dot" data-i="4" aria-label="Image 5"></button>
+      </div>
+    </div>
+    <div class="shop-info">
+      <div class="shop-badge">New Release</div>
+      <span class="label" style="margin-top:12px">[ Notion Template ]</span>
+      <h3 class="shop-title">CreatorHQ</h3>
+      <p class="shop-desc">The all-in-one Notion workspace built for content creators. Manage your content calendar, track brand deals, organise your ideas vault, and run your creator business — all in one beautiful system.</p>
+      <ul class="shop-features">
+        <li>Content calendar &amp; scheduling</li>
+        <li>Brand deal pipeline &amp; tracker</li>
+        <li>Ideas vault &amp; script templates</li>
+        <li>Analytics &amp; goals dashboard</li>
+        <li>Resources &amp; link hub</li>
+      </ul>
+      <div class="shop-buy">
+        <span class="shop-price">€19</span>
+        <a href="#" class="btn btn-primary">Get CreatorHQ →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary products -->
+  <div class="shop-grid">
+
+    <div class="shop-card">
+      <div class="shop-thumb shop-thumb--presets">
+        <div class="shop-thumb-inner">
+          <span class="shop-thumb-icon">🎞</span>
+          <span class="shop-thumb-label">Coming Soon</span>
+        </div>
+      </div>
+      <div class="shop-card-body">
+        <span class="label">[ Lightroom Presets ]</span>
+        <h3>Cinematic Preset Pack</h3>
+        <p>The exact colour grades I use in my brand and lifestyle content. One-click, professional results.</p>
+        <div class="shop-buy">
+          <span class="shop-price shop-price--sm">€12</span>
+          <a href="#" class="btn btn-ghost btn-sm">Notify Me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="shop-thumb shop-thumb--walls">
+        <div class="shop-thumb-inner">
+          <span class="shop-thumb-icon">🖥</span>
+          <span class="shop-thumb-label">Coming Soon</span>
+        </div>
+      </div>
+      <div class="shop-card-body">
+        <span class="label">[ Wallpapers ]</span>
+        <h3>Minimal Desktop Pack</h3>
+        <p>Curated desktop wallpapers for a clean, focused setup. Available in 4K for all screens and devices.</p>
+        <div class="shop-buy">
+          <span class="shop-price shop-price--sm">Free</span>
+          <a href="#" class="btn btn-ghost btn-sm">Notify Me</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -528,6 +619,26 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     }
   });
 });
+
+// ── CreatorHQ Carousel ─────────────────
+(function(){
+  const slides = document.getElementById('chq-slides');
+  const dots   = document.querySelectorAll('#chq-dots .shop-dot');
+  let cur = 0, total = 5, timer;
+
+  function goTo(n) {
+    cur = (n + total) % total;
+    slides.style.transform = `translateX(-${cur * 100}%)`;
+    dots.forEach((d,i) => d.classList.toggle('active', i === cur));
+  }
+
+  document.getElementById('chq-prev').addEventListener('click', () => { goTo(cur - 1); resetTimer(); });
+  document.getElementById('chq-next').addEventListener('click', () => { goTo(cur + 1); resetTimer(); });
+  dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.i); resetTimer(); }));
+
+  function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 4000); }
+  resetTimer();
+})();
 
 // ── Nav scroll shadow ──────────────────
 window.addEventListener('scroll', () => {
