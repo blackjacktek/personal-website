@@ -1,31 +1,36 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Dark theme (default) ── */
+/* ── Shared variables ── */
 :root {
-  --bg:      #0f0f0f;
-  --surface: #181818;
-  --border:  #262626;
-  --text:    #e8e8e8;
-  --muted:   #666;
-  --bio:     #aaa;
+  --radius: 10px;
+  --max-w:  600px;
+}
+
+/* ── Dark theme ── */
+:root,
+:root[data-theme="dark"] {
+  --bg:            #0f0f0f;
+  --surface:       #181818;
+  --border:        #262626;
+  --text:          #e8e8e8;
+  --muted:         #666;
+  --bio:           #aaa;
   --card-hover-bg: #1a1830;
-  --accent:  #7c6af7;
-  --accent-h:#9b8dfb;
-  --radius:  10px;
-  --max-w:   600px;
+  --accent:        #7c6af7;
+  --accent-h:      #9b8dfb;
 }
 
 /* ── Light theme ── */
 :root[data-theme="light"] {
-  --bg:      #f9f9f9;
-  --surface: #ffffff;
-  --border:  #e4e4e4;
-  --text:    #111111;
-  --muted:   #888;
-  --bio:     #555;
+  --bg:            #f9f9f9;
+  --surface:       #ffffff;
+  --border:        #e4e4e4;
+  --text:          #111111;
+  --muted:         #888;
+  --bio:           #555;
   --card-hover-bg: #f0eeff;
-  --accent:  #6255e0;
-  --accent-h:#7c6af7;
+  --accent:        #6255e0;
+  --accent-h:      #7c6af7;
 }
 
 html { scroll-behavior: smooth; }
