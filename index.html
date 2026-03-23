@@ -12,6 +12,10 @@
     (function(){
       const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');
       document.documentElement.setAttribute('data-theme',t);
+      // Always start at the very top — never restore scroll position
+      if (history.scrollRestoration) history.scrollRestoration = 'manual';
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+      window.scrollTo(0, 0);
     })();
   </script>
 </head>
@@ -23,10 +27,11 @@
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo">Blackjacktek</a>
   <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#shop">Shop</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#gear">Affiliate</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-end">
@@ -41,8 +46,8 @@
 <section class="hero">
   <div class="hero-text">
     <span class="label">[ Content Creator in Tech &amp; Lifestyle ]</span>
-    <h1>I turn tech products<br>into <em>cinematic stories</em><br>that sell.</h1>
-    <p class="hero-sub">I'm Blackjacktek — filmmaker, brand photographer, and creator consultant. I partner with tech brands to produce content that's not just beautiful, it drives real results.</p>
+    <h1>I turn products<br>into <em>cinematic stories</em><br>that sell.</h1>
+    <p class="hero-sub">I'm Blackjacktek — filmmaker, brand photographer, and creative partner to global brands. I make products look like they belong on a big screen — and perform like they belong in your feed.</p>
     <div class="hero-actions">
       <a href="#work" class="btn btn-primary">View My Work</a>
       <a href="#contact" class="btn btn-ghost">Let's Talk →</a>
@@ -147,20 +152,29 @@
     </div>
 
     <div class="product-card" data-category="wallpapers">
-      <div class="product-thumb product-thumb--walls">
-        <div class="product-soon">
-          <span class="product-soon-icon">🖥</span>
-          <span class="product-soon-text">Coming Soon</span>
-        </div>
-        <span class="product-badge product-badge--soon">Coming Soon</span>
+      <div class="product-thumb product-thumb--gallery">
+        <img src="Plasma1.png" alt="Plasma Flow Wallpaper Pack" class="product-gallery-main" id="plasma-main" />
+        <span class="product-badge product-badge--new">New</span>
+      </div>
+      <div class="product-gallery-strip">
+        <button class="pgal-thumb active" data-src="Plasma1.png"><img src="Plasma1.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma2.png"><img src="Plasma2.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma3.png"><img src="Plasma3.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma4.png"><img src="Plasma4.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma5.png"><img src="Plasma5.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma6.png"><img src="Plasma6.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma7.png"><img src="Plasma7.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma8.png"><img src="Plasma8.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma9.png"><img src="Plasma9.png" alt="" /></button>
+        <button class="pgal-thumb" data-src="Plasma10.png"><img src="Plasma10.png" alt="" /></button>
       </div>
       <div class="product-body">
         <span class="label">[ Wallpapers ]</span>
-        <h3>Minimal Desktop Pack</h3>
-        <p>Curated 4K wallpapers for a clean, focused setup. Available for all screens and devices.</p>
+        <h3>Plasma Flow</h3>
+        <p>Cinematic gradient wallpapers for iPhone, iPad &amp; Mac. Available in 4K — one-tap download.</p>
         <div class="product-footer">
           <span class="product-price">Free</span>
-          <a href="#" class="btn btn-ghost btn-sm">Notify Me</a>
+          <a href="https://blackjacktek.gumroad.com/l/PlasmaFlow?layout=profile" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Get Now →</a>
         </div>
       </div>
     </div>
@@ -185,6 +199,8 @@
     </div>
 
   </div>
+
+  <button class="show-more-btn" id="shop-show-more" style="display:none">Show More ↓</button>
 </section>
 
 <!-- ══════════════════════════════════════
@@ -311,6 +327,7 @@
     </a>
 
   </div>
+  <button class="show-more-btn" id="work-show-more" style="display:none">Show More ↓</button>
 </section>
 
 <!-- ══════════════════════════════════════
@@ -440,6 +457,7 @@
     </div>
 
   </div>
+  <button class="show-more-btn" id="testi-show-more" style="display:none">Show More ↓</button>
 </section>
 
 <!-- ══════════════════════════════════════
@@ -510,6 +528,89 @@
 </section>
 
 <!-- ══════════════════════════════════════
+     GEAR / AFFILIATE
+══════════════════════════════════════ -->
+<section class="gear" id="gear">
+  <div class="section-header">
+    <span class="label">[ Affiliate — Gear I Use ]</span>
+    <h2>The gear behind<br>the content.</h2>
+    <p class="section-sub">Everything I actually use to create. These are affiliate links — if you buy through them, you support the channel at no extra cost to you.</p>
+  </div>
+  <div class="gear-grid" id="gear-grid">
+
+    <!-- ── Add gear cards below. Duplicate a card block, swap the image src, name, category and href. ── -->
+
+    <a href="#" target="_blank" rel="noopener sponsored" class="gear-card">
+      <div class="gear-thumb gear-thumb--empty">
+        <span class="gear-plus">+</span>
+      </div>
+      <div class="gear-body">
+        <span class="gear-cat">[ Camera ]</span>
+        <h3 class="gear-name">Product Name</h3>
+        <span class="gear-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" rel="noopener sponsored" class="gear-card">
+      <div class="gear-thumb gear-thumb--empty">
+        <span class="gear-plus">+</span>
+      </div>
+      <div class="gear-body">
+        <span class="gear-cat">[ Lens ]</span>
+        <h3 class="gear-name">Product Name</h3>
+        <span class="gear-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" rel="noopener sponsored" class="gear-card">
+      <div class="gear-thumb gear-thumb--empty">
+        <span class="gear-plus">+</span>
+      </div>
+      <div class="gear-body">
+        <span class="gear-cat">[ Audio ]</span>
+        <h3 class="gear-name">Product Name</h3>
+        <span class="gear-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" rel="noopener sponsored" class="gear-card">
+      <div class="gear-thumb gear-thumb--empty">
+        <span class="gear-plus">+</span>
+      </div>
+      <div class="gear-body">
+        <span class="gear-cat">[ Lighting ]</span>
+        <h3 class="gear-name">Product Name</h3>
+        <span class="gear-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" rel="noopener sponsored" class="gear-card">
+      <div class="gear-thumb gear-thumb--empty">
+        <span class="gear-plus">+</span>
+      </div>
+      <div class="gear-body">
+        <span class="gear-cat">[ Accessories ]</span>
+        <h3 class="gear-name">Product Name</h3>
+        <span class="gear-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" rel="noopener sponsored" class="gear-card">
+      <div class="gear-thumb gear-thumb--empty">
+        <span class="gear-plus">+</span>
+      </div>
+      <div class="gear-body">
+        <span class="gear-cat">[ Accessories ]</span>
+        <h3 class="gear-name">Product Name</h3>
+        <span class="gear-cta">Shop Now →</span>
+      </div>
+    </a>
+
+  </div>
+  <button class="show-more-btn" id="gear-show-more" style="display:none">Show More ↓</button>
+</section>
+
+<!-- ══════════════════════════════════════
      FOOTER / CONTACT
 ══════════════════════════════════════ -->
 <footer class="footer" id="contact">
@@ -558,19 +659,6 @@
      MOBILE BOTTOM TAB BAR
 ══════════════════════════════════════ -->
 <nav class="mobile-tabs" id="mobile-tabs" aria-label="Mobile navigation">
-  <a href="#work" class="mobile-tab" data-section="work">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
-      <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
-    </svg>
-    <span>Work</span>
-  </a>
-  <a href="#services" class="mobile-tab" data-section="services">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-    </svg>
-    <span>Services</span>
-  </a>
   <a href="#shop" class="mobile-tab" data-section="shop">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
@@ -578,11 +666,30 @@
     </svg>
     <span>Shop</span>
   </a>
+  <a href="#services" class="mobile-tab" data-section="services">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+    </svg>
+    <span>Services</span>
+  </a>
   <a href="#pricing" class="mobile-tab" data-section="pricing">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
     </svg>
     <span>Pricing</span>
+  </a>
+  <a href="#work" class="mobile-tab" data-section="work">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+      <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+    </svg>
+    <span>Work</span>
+  </a>
+  <a href="#gear" class="mobile-tab" data-section="gear">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+    </svg>
+    <span>Affiliate</span>
   </a>
   <a href="#faq" class="mobile-tab" data-section="faq">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -593,6 +700,13 @@
 </nav>
 
 <script>
+// ── Ensure page always starts at top ───
+window.scrollTo(0, 0);
+// Enable smooth scroll only after first paint (prevents load-time jump)
+requestAnimationFrame(() => requestAnimationFrame(() => {
+  document.documentElement.classList.add('js-smooth');
+}));
+
 // ── Theme ──────────────────────────────
 const root = document.documentElement;
 function applyTheme(t) {
@@ -645,30 +759,87 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// ── Shop category filter ───────────────
+// ── Show-more (reusable) ─────────────
+function initShowMore(gridEl, btnEl, CAP) {
+  if (!gridEl || !btnEl) return;
+  const children = gridEl.children;
+  function refresh() {
+    const visible = [...children].filter(c => c.style.display !== 'none').length;
+    if (visible > CAP) {
+      gridEl.classList.add('capped');
+      btnEl.style.display = '';
+      btnEl.textContent = 'Show More (' + (visible - CAP) + ' more) ↓';
+    } else {
+      gridEl.classList.remove('capped');
+      btnEl.style.display = 'none';
+    }
+  }
+  btnEl.addEventListener('click', () => {
+    gridEl.classList.remove('capped');
+    btnEl.style.display = 'none';
+  });
+  return refresh;
+}
+
+// ── Shop category filter + show more ──
 (function(){
   const tabs  = document.querySelectorAll('.shop-tab');
   const grid  = document.getElementById('products-grid');
   const cards = grid ? grid.querySelectorAll('.product-card') : [];
+  const refresh = initShowMore(grid, document.getElementById('shop-show-more'), 6);
+
+  function applyFilter(filter) {
+    cards.forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+    });
+    refresh();
+  }
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      const filter = tab.dataset.filter;
-
       grid.style.opacity = '0';
       grid.style.transform = 'translateY(6px)';
-
       setTimeout(() => {
-        cards.forEach(card => {
-          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
-        });
+        applyFilter(tab.dataset.filter);
         grid.style.opacity = '1';
         grid.style.transform = 'translateY(0)';
       }, 160);
     });
   });
+
+  applyFilter('all');
+})();
+
+// ── Product image gallery ────────────
+document.querySelectorAll('.product-gallery-strip').forEach(strip => {
+  const main = strip.previousElementSibling.querySelector('img');
+  strip.querySelectorAll('.pgal-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      main.src = thumb.dataset.src;
+      strip.querySelectorAll('.pgal-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+});
+
+// ── Work show more ───────────────────
+(function(){
+  var r = initShowMore(document.querySelector('.work-grid'), document.getElementById('work-show-more'), 6);
+  if (r) r();
+})();
+
+// ── Testimonials show more ───────────
+(function(){
+  var r = initShowMore(document.querySelector('.testi-grid'), document.getElementById('testi-show-more'), 6);
+  if (r) r();
+})();
+
+// ── Gear show more ───────────────────
+(function(){
+  var r = initShowMore(document.getElementById('gear-grid'), document.getElementById('gear-show-more'), 6);
+  if (r) r();
 })();
 
 // ── Nav scroll shadow ──────────────────
@@ -679,7 +850,7 @@ window.addEventListener('scroll', () => {
 // ── Mobile tab active state ─────────────
 (function(){
   const tabs = document.querySelectorAll('.mobile-tab');
-  const sections = ['work','services','shop','pricing','faq'].map(id => document.getElementById(id));
+  const sections = ['shop','services','pricing','work','gear','faq'].map(id => document.getElementById(id));
   function setActive(id) {
     tabs.forEach(t => t.classList.toggle('active', t.dataset.section === id));
   }
