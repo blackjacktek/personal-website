@@ -567,6 +567,44 @@
   </div>
 </footer>
 
+<!-- ══════════════════════════════════════
+     MOBILE BOTTOM TAB BAR
+══════════════════════════════════════ -->
+<nav class="mobile-tabs" id="mobile-tabs" aria-label="Mobile navigation">
+  <a href="#work" class="mobile-tab" data-section="work">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+      <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+    </svg>
+    <span>Work</span>
+  </a>
+  <a href="#services" class="mobile-tab" data-section="services">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+    </svg>
+    <span>Services</span>
+  </a>
+  <a href="#shop" class="mobile-tab" data-section="shop">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+      <path d="M16 10a4 4 0 01-8 0"/>
+    </svg>
+    <span>Shop</span>
+  </a>
+  <a href="#pricing" class="mobile-tab" data-section="pricing">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+    </svg>
+    <span>Pricing</span>
+  </a>
+  <a href="#faq" class="mobile-tab" data-section="faq">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+    <span>FAQ</span>
+  </a>
+</nav>
+
 <script>
 // ── Theme ──────────────────────────────
 const root = document.documentElement;
@@ -644,6 +682,22 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
+
+// ── Mobile tab active state ─────────────
+(function(){
+  const tabs = document.querySelectorAll('.mobile-tab');
+  const sections = ['work','services','shop','pricing','faq'].map(id => document.getElementById(id));
+  function setActive(id) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.section === id));
+  }
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+  }, { threshold: 0.3 }).observe && sections.forEach(s => {
+    if (s) new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-40% 0px -40% 0px' }).observe(s);
+  });
+})();
 </script>
 </body>
 </html>
