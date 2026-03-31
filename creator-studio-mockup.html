@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Studio — Product Mockup</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: radial-gradient(ellipse at 50% 40%, #f0f0f0 0%, #d8d8d8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  .scene {
+    width: 1000px;
+    height: 800px;
+    perspective: 1800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Soft shadow under the box */
+  .shadow {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-42%) skewX(-8deg);
+    width: 380px;
+    height: 30px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.08) 40%, transparent 70%);
+    filter: blur(12px);
+    z-index: 0;
+  }
+
+  .box-wrapper {
+    transform-style: preserve-3d;
+    transform: rotateX(3deg) rotateY(-25deg) translateY(-10px);
+    position: relative;
+    z-index: 1;
+  }
+
+  .box {
+    width: 360px;
+    height: 460px;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+
+  /* ── FRONT FACE ── */
+  .face-front {
+    position: absolute;
+    width: 360px;
+    height: 460px;
+    background: linear-gradient(175deg, #ffffff 0%, #fafafa 60%, #f5f5f5 100%);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 32px 24px;
+    transform: translateZ(30px);
+  }
+
+  /* Subtle light reflection on front */
+  .face-front::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.15) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  /* Notion logo — authentic style */
+  .notion-logo {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+
+  .notion-logo svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+  }
+
+  .product-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.8px;
+    margin-bottom: 10px;
+  }
+
+  .product-tagline {
+    font-size: 8.5px;
+    color: #999;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    max-width: 260px;
+    margin-bottom: 24px;
+  }
+
+  /* Screenshot area */
+  .screenshot-wrapper {
+    width: 296px;
+    height: 210px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.06),
+      0 4px 16px rgba(0,0,0,0.05),
+      0 12px 32px rgba(0,0,0,0.04);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.07);
+    position: relative;
+  }
+
+  /* Fake Notion UI inside screenshot */
+  .notion-ui {
+    width: 100%;
+    height: 100%;
+    padding: 10px 14px;
+    font-size: 7px;
+    color: #37352f;
+    background: #fff;
+  }
+
+  .notion-ui .n-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ebebea;
+  }
+
+  .notion-ui .n-icon {
+    width: 16px;
+    height: 16px;
+    background: #f1f1f0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+  }
+
+  .notion-ui .n-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #37352f;
+  }
+
+  .notion-ui .n-badge {
+    font-size: 5.5px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-left: auto;
+  }
+
+  .notion-ui .n-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 7px;
+    color: #b4b4b0;
+  }
+
+  .notion-ui .n-tabs span:first-child {
+    color: #37352f;
+    font-weight: 500;
+    border-bottom: 1.5px solid #37352f;
+    padding-bottom: 2px;
+  }
+
+  .notion-ui .n-stats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .notion-ui .n-stat {
+    flex: 1;
+    background: #f7f6f3;
+    border-radius: 4px;
+    padding: 5px 7px;
+  }
+
+  .notion-ui .n-stat-label {
+    font-size: 5px;
+    color: #9b9a97;
+    display: block;
+    margin-bottom: 2px;
+    white-space: nowrap;
+  }
+
+  .notion-ui .n-stat-val {
+    font-size: 12px;
+    font-weight: 700;
+    color: #37352f;
+  }
+
+  .notion-ui .n-stat-sub {
+    font-size: 4.5px;
+    color: #4dab9a;
+  }
+
+  .notion-ui .n-section-title {
+    font-size: 7.5px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #37352f;
+  }
+
+  .notion-ui .n-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2.5px 0;
+    border-bottom: 1px solid #f5f5f4;
+    font-size: 6px;
+  }
+
+  .notion-ui .n-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .notion-ui .n-check {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #d4d4d0;
+    border-radius: 2px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5px;
+  }
+
+  .notion-ui .n-check.done {
+    background: #2eaadc;
+    border-color: #2eaadc;
+    color: #fff;
+  }
+
+  .notion-ui .n-columns {
+    display: flex;
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .notion-ui .n-col {
+    flex: 1;
+  }
+
+  .notion-ui .n-tag {
+    display: inline-block;
+    padding: 0.5px 3px;
+    border-radius: 2px;
+    font-size: 5px;
+    margin-left: 3px;
+    font-weight: 500;
+  }
+
+  /* Color blocks row at bottom */
+  .notion-ui .n-blocks {
+    display: flex;
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .notion-ui .n-block {
+    flex: 1;
+    height: 18px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.5px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── SPINE (LEFT SIDE) ── */
+  .face-spine {
+    position: absolute;
+    width: 60px;
+    height: 460px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    transform: rotateY(-90deg) translateZ(-30px);
+    transform-origin: left center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Subtle highlight on spine edge */
+  .face-spine::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+  }
+
+  .spine-text {
+    color: #fff;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    opacity: 0.7;
+  }
+
+  /* ── TOP FACE ── */
+  .face-top {
+    position: absolute;
+    width: 360px;
+    height: 60px;
+    background: linear-gradient(90deg, #222 0%, #bbb 3%, #e8e8e8 15%, #f8f8f8 50%, #fff 100%);
+    transform: rotateX(90deg) translateZ(-30px);
+    transform-origin: top center;
+  }
+
+  /* ── BACK FACE ── */
+  .face-back {
+    position: absolute;
+    width: 360px;
+    height: 460px;
+    background: #f0f0f0;
+    transform: translateZ(-30px);
+  }
+
+  /* ── RIGHT FACE ── */
+  .face-right {
+    position: absolute;
+    width: 60px;
+    height: 460px;
+    background: linear-gradient(180deg, #f5f5f5 0%, #eee 100%);
+    transform: rotateY(90deg) translateZ(330px);
+    transform-origin: right center;
+    box-shadow: inset 2px 0 6px rgba(0,0,0,0.03);
+  }
+
+  /* ── BOTTOM FACE ── */
+  .face-bottom {
+    position: absolute;
+    width: 360px;
+    height: 60px;
+    background: linear-gradient(90deg, #181818 0%, #999 3%, #ccc 15%, #e0e0e0 50%, #eee 100%);
+    transform: rotateX(-90deg) translateZ(430px);
+    transform-origin: bottom center;
+  }
+
+  /* Page dots */
+  .page-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 14px;
+  }
+
+  .page-dots span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #d0d0d0;
+  }
+
+  .page-dots span.active {
+    background: #888;
+  }
+</style>
+</head>
+<body>
+
+<div class="scene">
+  <div class="shadow"></div>
+  <div class="box-wrapper">
+    <div class="box">
+
+      <!-- BACK -->
+      <div class="face-back"></div>
+
+      <!-- FRONT -->
+      <div class="face-front">
+        <!-- Notion Logo — 3D cube with N -->
+        <div class="notion-logo">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- Back face of cube -->
+            <path d="M60 15 L95 35 L95 80 L60 100 L25 80 L25 35Z" fill="#fff" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Right face -->
+            <path d="M60 15 L95 35 L95 80 L60 60Z" fill="#e0e0e0" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Left face -->
+            <path d="M60 15 L25 35 L25 80 L60 60Z" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Bottom face -->
+            <path d="M25 80 L60 100 L95 80 L60 60Z" fill="#d8d8d8" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- N letter on front-left face -->
+            <text x="45" y="62" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#1a1a1a" text-anchor="middle">N</text>
+          </svg>
+        </div>
+
+        <div class="product-name">Creator Studio</div>
+        <p class="product-tagline">
+          For content creators who want a single system to organize ideas,<br>
+          plan content, and grow their brand.
+        </p>
+
+        <!-- Fake Notion Screenshot -->
+        <div class="screenshot-wrapper">
+          <div class="notion-ui">
+            <div class="n-header">
+              <div class="n-icon">🎬</div>
+              <span class="n-title">Creator Studio</span>
+              <span class="n-badge">Pro</span>
+            </div>
+            <div class="n-tabs">
+              <span>Dashboard</span>
+              <span>Content</span>
+              <span>Calendar</span>
+              <span>Analytics</span>
+              <span>Brand Kit</span>
+            </div>
+            <div class="n-stats">
+              <div class="n-stat">
+                <span class="n-stat-label">Published this month</span>
+                <span class="n-stat-val">24</span>
+                <span class="n-stat-sub">+12%</span>
+              </div>
+              <div class="n-stat">
+                <span class="n-stat-label">In production</span>
+                <span class="n-stat-val">8</span>
+              </div>
+              <div class="n-stat">
+                <span class="n-stat-label">Scheduled</span>
+                <span class="n-stat-val">12</span>
+              </div>
+            </div>
+            <div class="n-columns">
+              <div class="n-col">
+                <div class="n-section-title">Quick Actions</div>
+                <div class="n-row"><div class="n-dot" style="background:#eb5757"></div> New Video <span class="n-tag" style="background:#fdecea;color:#eb5757">Priority</span></div>
+                <div class="n-row"><div class="n-dot" style="background:#2eaadc"></div> New Reel</div>
+                <div class="n-row"><div class="n-dot" style="background:#6940a5"></div> New Post</div>
+                <div class="n-row"><div class="n-dot" style="background:#4dab9a"></div> New Story</div>
+              </div>
+              <div class="n-col">
+                <div class="n-section-title">This Week</div>
+                <div class="n-row"><div class="n-check done">&#10003;</div> Brand collab draft <span class="n-tag" style="background:#dbeddb;color:#4dab9a">Done</span></div>
+                <div class="n-row"><div class="n-check"></div> Edit travel vlog <span class="n-tag" style="background:#fef3c7;color:#d69e2e">In Progress</span></div>
+                <div class="n-row"><div class="n-check"></div> Schedule tweets</div>
+                <div class="n-row"><div class="n-check"></div> Review analytics</div>
+              </div>
+            </div>
+            <div class="n-blocks">
+              <div class="n-block" style="background:#eb5757">YouTube</div>
+              <div class="n-block" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)">Reels</div>
+              <div class="n-block" style="background:#2eaadc">Twitter</div>
+              <div class="n-block" style="background:#6940a5">Blog</div>
+              <div class="n-block" style="background:#4dab9a">TikTok</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-dots">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- SPINE -->
+      <div class="face-spine">
+        <span class="spine-text">Blackjacktek</span>
+      </div>
+
+      <!-- TOP -->
+      <div class="face-top"></div>
+
+      <!-- RIGHT -->
+      <div class="face-right"></div>
+
+      <!-- BOTTOM -->
+      <div class="face-bottom"></div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
