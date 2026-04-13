@@ -27,15 +27,15 @@ a   { color: inherit; text-decoration: none; }
 }
 
 :root[data-theme="light"] {
-  --bg:         #eae7e1;
-  --bg2:        #e1ddd6;
-  --surface:    #f0ede7;
-  --surface2:   #d8d4cc;
-  --border:     #ccc8c0;
-  --border2:    #b8b4ac;
-  --text:       #1e1d1b;
-  --text2:      #4a4845;
-  --muted:      #9a9790;
+  --bg:         #ffffff;
+  --bg2:        #f7f7f7;
+  --surface:    #f5f5f5;
+  --surface2:   #ebebeb;
+  --border:     #e0e0e0;
+  --border2:    #d0d0d0;
+  --text:       #1a1a1a;
+  --text2:      #484848;
+  --muted:      #949494;
   --accent:     #ea580c;
   --accent-h:   #f97316;
   --accent-bg:  rgba(234,88,12,.1);
