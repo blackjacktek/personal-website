@@ -190,7 +190,7 @@ h3 { font-weight: 600; }
   margin-bottom: 56px;
 }
 .hero-logo {
-  height: 64px; width: auto;
+  height: auto; width: min(420px, 60vw);
   margin-bottom: 32px;
 }
 
@@ -771,7 +771,7 @@ h3 { font-weight: 600; }
   body { padding-bottom: 72px; }
   .nav-links { display: none; }
   .hero { padding: 40px 16px 0; }
-  .hero-logo { height: 48px; margin-bottom: 24px; }
+  .hero-logo { width: min(320px, 70vw); margin-bottom: 24px; }
   .hero-center { margin-bottom: 36px; }
   .hero h1 { font-size: 2.2rem; letter-spacing: -1px; }
   .hero-sub { font-size: 15px; }
