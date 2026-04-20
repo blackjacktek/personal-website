@@ -133,29 +133,22 @@ h3 { font-weight: 600; }
 .nav.scrolled { border-color: var(--border); }
 
 .nav-logo {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center;
   flex-shrink: 0;
 }
-.nav-logo-mark {
-  height: 26px; width: auto;
-  color: var(--text);
-  transition: color .2s;
+.nav-logo-img {
+  height: 30px; width: auto;
 }
-.nav-logo-text {
-  font-size: 15px; font-weight: 500; letter-spacing: 1.5px;
-  color: var(--text);
-  line-height: 1;
-}
-.nav-logo-tek {
-  font-weight: 300; letter-spacing: 3px;
-  position: relative;
-}
-.nav-logo-dot {
-  display: inline-block; width: 5px; height: 5px;
-  background: #C93A1E; border-radius: 50%;
-  margin-left: 2px; vertical-align: baseline;
-  position: relative; top: 1px;
-}
+
+/* Theme-based logo switching (nav + footer) */
+:root[data-theme="dark"] .nav-logo-light,
+:root[data-theme="dark"] .footer-logo-light { display: none; }
+:root[data-theme="dark"] .nav-logo-dark,
+:root[data-theme="dark"] .footer-logo-dark { display: block; }
+:root[data-theme="light"] .nav-logo-dark,
+:root[data-theme="light"] .footer-logo-dark { display: none; }
+:root[data-theme="light"] .nav-logo-light,
+:root[data-theme="light"] .footer-logo-light { display: block; }
 
 .nav-links {
   display: flex; gap: 4px; list-style: none; align-items: center;
@@ -638,27 +631,10 @@ h3 { font-weight: 600; }
   flex-wrap: wrap; gap: 20px;
 }
 .footer-logo {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center;
 }
-.footer-logo-mark {
-  height: 22px; width: auto;
-  color: var(--text);
-  transition: color .2s;
-}
-.footer-logo-text {
-  font-size: 14px; font-weight: 500; letter-spacing: 1.5px;
-  color: var(--text);
-  line-height: 1;
-}
-.footer-logo-tek {
-  font-weight: 300; letter-spacing: 3px;
-  position: relative;
-}
-.footer-logo-dot {
-  display: inline-block; width: 4px; height: 4px;
-  background: #C93A1E; border-radius: 50%;
-  margin-left: 2px; vertical-align: baseline;
-  position: relative; top: 1px;
+.footer-logo-img {
+  height: 26px; width: auto;
 }
 .footer-nav  { display: flex; gap: 20px; flex-wrap: wrap; }
 .footer-nav a { font-size: 13px; color: var(--muted); transition: color .15s; }
