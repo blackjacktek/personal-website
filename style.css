@@ -1120,3 +1120,19 @@ h3 { font-weight: 600; }
   .facet-stats { grid-template-columns: 1fr; }
   .facet-specs { grid-template-columns: 1fr; }
 }
+
+/* Facet gallery — interactive cards */
+.facet-card {
+  font: inherit; color: inherit; text-align: left;
+  border: 2px solid transparent; background: var(--surface);
+  cursor: pointer; padding: 0;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.facet-card.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 12px 32px rgba(234,88,12,.2);
+}
+.facet-card:hover { transform: translateY(-3px); }
+#facet-hero-mockup {
+  transition: opacity .2s ease;
+}

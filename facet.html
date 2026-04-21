@@ -64,76 +64,76 @@
   </div>
 
   <div class="product-hero-feature">
-    <img src="facet-assets/mockups/desktop/1.jpg" alt="Facet Aurum on desktop" />
+    <img id="facet-hero-mockup" src="facet-assets/mockups/desktop/1.jpg" alt="Facet Aurum on desktop" />
   </div>
 </section>
 
 <!-- GALLERY -->
 <section class="facet-gallery" id="gallery">
   <div class="facet-gallery-grid">
-    <div class="facet-card">
+    <button class="facet-card active" data-mockup="1" data-name="Aurum">
       <img src="facet-assets/wallpapers/facet_aurum_desktop_7680x4320.jpg" alt="Aurum" loading="lazy" />
       <div class="facet-card-label">
         <h3>Aurum</h3>
         <span>Amber · Warm</span>
       </div>
-    </div>
-    <div class="facet-card">
+    </button>
+    <button class="facet-card" data-mockup="2" data-name="Ember">
       <img src="facet-assets/wallpapers/facet_ember_desktop_7680x4320.jpg" alt="Ember" loading="lazy" />
       <div class="facet-card-label">
         <h3>Ember</h3>
         <span>Crimson · Warm</span>
       </div>
-    </div>
-    <div class="facet-card">
+    </button>
+    <button class="facet-card" data-mockup="3" data-name="Halcyon">
       <img src="facet-assets/wallpapers/facet_halcyon_desktop_7680x4320.jpg" alt="Halcyon" loading="lazy" />
       <div class="facet-card-label">
         <h3>Halcyon</h3>
         <span>Violet · Cool</span>
       </div>
-    </div>
-    <div class="facet-card">
+    </button>
+    <button class="facet-card" data-mockup="4" data-name="Cobalt">
       <img src="facet-assets/wallpapers/facet_cobalt_desktop_7680x4320.jpg" alt="Cobalt" loading="lazy" />
       <div class="facet-card-label">
         <h3>Cobalt</h3>
         <span>Blue · Cool</span>
       </div>
-    </div>
-    <div class="facet-card">
+    </button>
+    <button class="facet-card" data-mockup="5" data-name="Tide">
       <img src="facet-assets/wallpapers/facet_tide_desktop_7680x4320.jpg" alt="Tide" loading="lazy" />
       <div class="facet-card-label">
         <h3>Tide</h3>
         <span>Teal · Cool</span>
       </div>
-    </div>
-    <div class="facet-card">
+    </button>
+    <button class="facet-card" data-mockup="6" data-name="Verdant">
       <img src="facet-assets/wallpapers/facet_verdant_desktop_7680x4320.jpg" alt="Verdant" loading="lazy" />
       <div class="facet-card-label">
         <h3>Verdant</h3>
         <span>Emerald · Cool</span>
       </div>
-    </div>
-    <div class="facet-card">
+    </button>
+    <button class="facet-card" data-mockup="7" data-name="Dawn">
       <img src="facet-assets/wallpapers/facet_dawn_desktop_7680x4320.jpg" alt="Dawn" loading="lazy" />
       <div class="facet-card-label">
         <h3>Dawn</h3>
         <span>Rose · Warm</span>
       </div>
-    </div>
-    <div class="facet-card">
+    </button>
+    <button class="facet-card" data-mockup="8" data-name="Obsidian">
       <img src="facet-assets/wallpapers/facet_obsidian_desktop_7680x4320.jpg" alt="Obsidian" loading="lazy" />
       <div class="facet-card-label">
         <h3>Obsidian</h3>
         <span>Monochrome · Dark</span>
       </div>
-    </div>
-    <div class="facet-card">
+    </button>
+    <button class="facet-card" data-mockup="9" data-name="Alabaster">
       <img src="facet-assets/wallpapers/facet_alabaster_desktop_7680x4320.jpg" alt="Alabaster" loading="lazy" />
       <div class="facet-card-label">
         <h3>Alabaster</h3>
         <span>Monochrome · Light</span>
       </div>
-    </div>
+    </button>
   </div>
 
   <div class="facet-stats">
@@ -384,6 +384,29 @@
       const item = btn.closest('.ffaq-item');
       item.classList.toggle('open');
       btn.setAttribute('aria-expanded', item.classList.contains('open'));
+    });
+  });
+
+  // Gallery → hero mockup swap
+  const heroMockup = document.getElementById('facet-hero-mockup');
+  document.querySelectorAll('.facet-card').forEach(card=>{
+    card.addEventListener('click',()=>{
+      const n = card.dataset.mockup;
+      const name = card.dataset.name;
+      if (!n || !heroMockup) return;
+      // Preload then swap with fade
+      const img = new Image();
+      img.onload = () => {
+        heroMockup.style.opacity = '0';
+        setTimeout(()=>{
+          heroMockup.src = img.src;
+          heroMockup.alt = `Facet ${name} on desktop`;
+          heroMockup.style.opacity = '1';
+        }, 180);
+      };
+      img.src = `facet-assets/mockups/desktop/${n}.jpg`;
+      document.querySelectorAll('.facet-card').forEach(c=>c.classList.remove('active'));
+      card.classList.add('active');
     });
   });
 </script>
