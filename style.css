@@ -796,3 +796,327 @@ h3 { font-weight: 600; }
   .hero h1        { font-size: 1.8rem; }
   .nav            { padding: 0 20px; }
 }
+
+/* ═══════════════════════════════════════
+   PRODUCT PAGE — FACET
+═══════════════════════════════════════ */
+
+/* Nav active state for sub-section */
+.nav-active { color: var(--text); font-weight: 500; }
+.nav-sub { color: var(--text); font-weight: 400; margin-left: 2px; }
+
+/* Product hero */
+.product-hero {
+  max-width: 1200px; margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+.product-hero-meta {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding-bottom: 24px; margin-bottom: 80px;
+  border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 11px; letter-spacing: .6px; text-transform: uppercase;
+  color: var(--muted);
+}
+.meta-crumb {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px; color: var(--text);
+  text-transform: none; letter-spacing: 0;
+}
+.meta-crumb em { font-style: italic; color: var(--text2); }
+.meta-dash { color: var(--muted); margin: 0 6px; }
+.meta-right { text-align: right; display: flex; flex-direction: column; gap: 4px; }
+.meta-right strong { color: var(--text); font-weight: 600; }
+
+.product-hero-headline {
+  max-width: 900px;
+}
+.product-hero-headline h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.05; letter-spacing: -2px;
+  margin-bottom: 28px;
+}
+.product-hero-sub {
+  font-size: 17px; color: var(--text2); line-height: 1.7;
+  max-width: 580px; margin-bottom: 36px;
+}
+.product-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.price-strike {
+  text-decoration: line-through; opacity: .5; margin-right: 6px; font-weight: 400;
+}
+
+.product-hero-feature {
+  margin-top: 64px;
+  border-radius: 20px; overflow: hidden;
+  aspect-ratio: 16/9;
+}
+.product-hero-feature img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Gallery */
+.facet-gallery {
+  max-width: 1200px; margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+.facet-gallery-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-bottom: 80px;
+}
+.facet-card {
+  position: relative; border-radius: 14px; overflow: hidden;
+  aspect-ratio: 16/9; background: var(--surface);
+}
+.facet-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .4s ease;
+}
+.facet-card:hover img { transform: scale(1.03); }
+.facet-card-label {
+  position: absolute; bottom: 20px; left: 20px;
+  color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+.facet-card-label h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 24px; font-weight: 400; margin-bottom: 4px;
+}
+.facet-card-label span {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 10px; letter-spacing: 1px; text-transform: uppercase; opacity: .85;
+}
+
+.facet-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+  padding-top: 48px; border-top: 1px solid var(--border);
+}
+.fstat-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 56px; font-weight: 400; line-height: 1;
+  margin-bottom: 12px;
+}
+.fstat-num sup { font-size: 22px; vertical-align: super; margin-left: 2px; }
+.fstat-label {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.fstat-sub { font-size: 13px; color: var(--text2); line-height: 1.55; }
+
+/* Process */
+.facet-process {
+  max-width: 1200px; margin: 0 auto;
+  padding: 60px 24px;
+}
+.facet-process-head {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  margin-bottom: 56px; align-items: start;
+}
+.facet-process-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -1px;
+}
+.facet-process-head p {
+  font-size: 15px; line-height: 1.72; color: var(--text2);
+}
+.facet-process-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  background: var(--surface); border-radius: 20px; padding: 24px;
+}
+.fproc-card {
+  background: var(--bg); border-radius: 14px; padding: 24px;
+  display: flex; flex-direction: column;
+}
+.fproc-meta {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.fproc-card h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 26px; font-weight: 400; margin-bottom: 12px;
+}
+.fproc-card p { font-size: 14px; color: var(--text2); line-height: 1.6; margin-bottom: 20px; flex: 1; }
+.fproc-card img {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  border-radius: 8px;
+}
+
+/* In Context */
+.facet-context {
+  max-width: 1200px; margin: 0 auto;
+  padding: 60px 24px;
+}
+.facet-context-head {
+  text-align: right; margin-bottom: 48px;
+}
+.facet-context-head .label { display: block; margin-bottom: 12px; }
+.facet-context-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -1px;
+}
+.facet-context-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-bottom: 64px;
+}
+.fctx-card {
+  position: relative; border-radius: 14px; overflow: hidden;
+  aspect-ratio: 1; background: var(--surface);
+}
+.fctx-card img { width: 100%; height: 100%; object-fit: cover; }
+.fctx-tag {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  background: rgba(0,0,0,.7); color: #fff;
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+  padding: 6px 10px; border-radius: 6px;
+}
+.fctx-caption {
+  position: absolute; bottom: 16px; left: 20px; color: #fff;
+  font-family: 'Instrument Serif', serif; font-size: 18px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+
+.facet-specs {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  padding-top: 40px; border-top: 1px solid var(--border);
+}
+.fspec-label {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); display: block; margin-bottom: 10px;
+}
+.fspec-val {
+  font-family: 'Instrument Serif', serif;
+  font-size: 26px; font-weight: 400; line-height: 1.2;
+  margin-bottom: 10px;
+}
+.fspec-val em { font-style: italic; color: var(--text2); font-size: 22px; }
+.fspec p { font-size: 13px; color: var(--text2); line-height: 1.55; }
+
+/* Pack + FAQ */
+.facet-info {
+  max-width: 1200px; margin: 0 auto;
+  padding: 60px 24px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+}
+.facet-info h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem); line-height: 1.1; letter-spacing: -.5px;
+  margin-bottom: 32px;
+}
+.fpack-list { list-style: none; padding: 0; }
+.fpack-list li {
+  display: grid; grid-template-columns: 40px 1fr; gap: 16px;
+  padding: 20px 0; border-top: 1px solid var(--border);
+  align-items: start;
+}
+.fpack-list li:last-child { border-bottom: 1px solid var(--border); }
+.fpack-num {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 11px; letter-spacing: 1px; color: var(--muted);
+  padding-top: 3px;
+}
+.fpack-list strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.fpack-list p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+.ffaq-list { display: flex; flex-direction: column; }
+.ffaq-item { border-top: 1px solid var(--border); }
+.ffaq-item:last-child { border-bottom: 1px solid var(--border); }
+.ffaq-q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  background: none; border: none; cursor: pointer;
+  padding: 20px 0; font-size: 15px; font-weight: 500; color: var(--text);
+  text-align: left; font-family: inherit;
+}
+.ffaq-icon { font-size: 18px; color: var(--muted); transition: transform .2s, color .2s; }
+.ffaq-item.open .ffaq-icon { transform: rotate(45deg); color: var(--accent); }
+.ffaq-item.open .ffaq-q { color: var(--accent); }
+.ffaq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+.ffaq-item.open .ffaq-a { grid-template-rows: 1fr; }
+.ffaq-a-inner { overflow: hidden; }
+.ffaq-a-inner p { font-size: 14px; color: var(--text2); line-height: 1.7; padding-bottom: 22px; }
+
+/* Buy section */
+.facet-buy {
+  max-width: 1200px; margin: 0 auto;
+  padding: 60px 24px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  background: var(--bg2); border-radius: 24px;
+}
+.facet-buy-left h2 {
+  font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.05; letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+.facet-buy-left p { font-size: 15px; color: var(--text2); line-height: 1.7; max-width: 440px; }
+
+.facet-buy-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 40px;
+}
+.fbuy-price {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 10px; font-family: 'Instrument Serif', serif;
+}
+.fbuy-currency { font-size: 28px; color: var(--text2); }
+.fbuy-num { font-size: 80px; font-weight: 400; line-height: 1; letter-spacing: -3px; }
+.fbuy-strike {
+  font-size: 24px; color: var(--muted); text-decoration: line-through;
+}
+.fbuy-meta {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 28px;
+}
+.fbuy-list { list-style: none; padding: 0; margin-bottom: 32px; }
+.fbuy-list li {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 14px 0; border-top: 1px solid var(--border); font-size: 14px;
+}
+.fbuy-list li:last-child { border-bottom: 1px solid var(--border); }
+.fbuy-list li > span:last-child {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 11px; letter-spacing: .5px; color: var(--muted);
+}
+.fbuy-btn { width: 100%; justify-content: center; }
+
+/* Final CTA */
+.facet-cta {
+  max-width: 900px; margin: 0 auto;
+  padding: 100px 24px; text-align: center;
+}
+.facet-cta h2 {
+  font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+.facet-cta p {
+  font-size: 16px; color: var(--text2); line-height: 1.7;
+  max-width: 520px; margin: 0 auto 36px;
+}
+
+/* Italic serif styling shared across product page */
+.product-hero h1 em,
+.facet-process-head h2 em,
+.facet-context-head h2 em,
+.facet-info h2 em,
+.facet-buy-left h2 em,
+.facet-cta h2 em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic; font-weight: 400;
+  color: var(--text2);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .product-hero-meta { flex-direction: column; gap: 16px; }
+  .meta-right { text-align: left; }
+  .facet-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .facet-stats { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .facet-process-head { grid-template-columns: 1fr; gap: 24px; }
+  .facet-process-grid { grid-template-columns: 1fr; }
+  .facet-context-grid { grid-template-columns: 1fr; }
+  .facet-specs { grid-template-columns: repeat(2, 1fr); }
+  .facet-info { grid-template-columns: 1fr; gap: 40px; }
+  .facet-buy { grid-template-columns: 1fr; padding: 40px 24px; }
+  .facet-buy-card { padding: 28px; }
+  .fbuy-num { font-size: 64px; }
+}
+@media (max-width: 600px) {
+  .facet-gallery-grid { grid-template-columns: 1fr; }
+  .facet-stats { grid-template-columns: 1fr; }
+  .facet-specs { grid-template-columns: 1fr; }
+}
