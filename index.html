@@ -859,14 +859,25 @@ function animateCount(el) {
   }
   requestAnimationFrame(step);
 }
-new IntersectionObserver((entries, obs) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.count').forEach(animateCount);
-      obs.unobserve(e.target);
-    }
+(function(){
+  const statsEl = document.querySelector('.hero-stats');
+  if (!statsEl) return;
+  let fired = false;
+  function fire(){
+    if (fired) return;
+    fired = true;
+    statsEl.querySelectorAll('.count').forEach(animateCount);
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { fire(); io.disconnect(); } });
+  }, { threshold: 0.2 });
+  io.observe(statsEl);
+  // Safety fallback: if already in view on load, fire after a tick
+  requestAnimationFrame(() => {
+    const r = statsEl.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) fire();
   });
-}, { threshold: 0.6 }).observe(document.querySelector('.hero-stats'));
+})();
 
 // ── FAQ accordion ──────────────────────
 document.querySelectorAll('.faq-q').forEach(btn => {
