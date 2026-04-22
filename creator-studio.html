@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creator Studio — Notion Template · Blackjacktek</title>
+  <meta name="description" content="The all-in-one Notion workspace for creators. Plan content, track brand deals, manage finances and ship more from Mac, iPad and iPhone." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="brand/favicon.png" />
+  <script>
+    (function(){
+      const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');
+      document.documentElement.setAttribute('data-theme',t);
+      if (history.scrollRestoration) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    })();
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img class="nav-logo-img nav-logo-light" src="brand/blackjacktek-full-color.svg" alt="Blackjacktek" />
+    <img class="nav-logo-img nav-logo-dark" src="brand/blackjacktek-full-knockout.svg" alt="Blackjacktek" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#shop" class="nav-active">Shop <span class="nav-sub">/ Notion</span></a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#gear">Affiliate</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <a href="index.html#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="product-hero">
+  <div class="product-hero-meta">
+    <div class="meta-left">
+      <span class="meta-crumb">Creator Studio <span class="meta-dash">—</span> <em>notion template</em></span>
+    </div>
+    <div class="meta-right">
+      <div><strong>1</strong> workspace</div>
+      <div><strong>10+</strong> views · <strong>2026</strong></div>
+      <div>Desktop · Tablet · Mobile</div>
+    </div>
+  </div>
+
+  <div class="product-hero-headline">
+    <h1>Your creator business,<br><em>finally in one place.</em></h1>
+    <p class="product-hero-sub">Creator Studio is a complete Notion workspace — content calendar, YouTube metrics, brand deals, finances, ideas and to-dos — built to run your whole creator operation from one screen.</p>
+    <div class="product-hero-actions">
+      <a href="#buy" class="btn btn-primary btn-lg">Get the template <strong>€35</strong></a>
+      <a href="#gallery" class="btn btn-ghost btn-lg">View samples</a>
+    </div>
+  </div>
+
+  <div class="product-hero-feature">
+    <img id="cs-hero-mockup" src="creator-studio-assets/laptop-main.jpg" alt="Creator Studio on desktop" />
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="facet-gallery plasma-gallery" id="gallery">
+  <div class="facet-gallery-grid plasma-grid">
+    <button class="facet-card active" data-src="creator-studio-assets/laptop-main.jpg" data-name="Desktop">
+      <img src="creator-studio-assets/laptop-main.jpg" alt="Creator Studio on desktop" loading="lazy" />
+      <div class="facet-card-label">
+        <h3>Desktop</h3>
+        <span>Mac · Notion Web</span>
+      </div>
+    </button>
+    <button class="facet-card" data-src="creator-studio-assets/mobile-main.jpg" data-name="Mobile">
+      <img src="creator-studio-assets/mobile-main.jpg" alt="Creator Studio on mobile" loading="lazy" />
+      <div class="facet-card-label">
+        <h3>Mobile</h3>
+        <span>iPhone · Notion App</span>
+      </div>
+    </button>
+    <button class="facet-card" data-src="creator-studio-assets/tablet-main.jpg" data-name="Tablet">
+      <img src="creator-studio-assets/tablet-main.jpg" alt="Creator Studio on tablet" loading="lazy" />
+      <div class="facet-card-label">
+        <h3>Tablet</h3>
+        <span>iPad · Notion App</span>
+      </div>
+    </button>
+  </div>
+
+  <div class="facet-stats">
+    <div class="fstat">
+      <div class="fstat-num">10<sup>+</sup></div>
+      <div class="fstat-label">Views</div>
+      <div class="fstat-sub">Dashboard, calendar, YouTube, Shorts, ideas, finance, brand deals.</div>
+    </div>
+    <div class="fstat">
+      <div class="fstat-num">3</div>
+      <div class="fstat-label">Devices</div>
+      <div class="fstat-sub">Optimised for Mac, iPad and iPhone — works anywhere Notion runs.</div>
+    </div>
+    <div class="fstat">
+      <div class="fstat-num">1</div>
+      <div class="fstat-label">Command Center</div>
+      <div class="fstat-sub">One workspace — no more juggling five apps to run the business.</div>
+    </div>
+    <div class="fstat">
+      <div class="fstat-num">∞</div>
+      <div class="fstat-label">License</div>
+      <div class="fstat-sub">Personal use. Duplicate into your own Notion. Lifetime updates.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="facet-process">
+  <div class="facet-process-head">
+    <h2>Built for the way<br><em>creators actually work.</em></h2>
+    <p>Creator Studio isn't a template dump. It's a structured operating system — dashboards, pipelines and calendars wired together so content, money and ideas stop falling through the cracks.</p>
+  </div>
+
+  <div class="facet-process-grid">
+    <div class="fproc-card">
+      <span class="fproc-meta">01 · Plan</span>
+      <h3>Content calendar</h3>
+      <p>Plan long-form, shorts and posts across every channel on a single calendar — goals, deadlines and status tracked together.</p>
+      <img src="creator-studio-assets/laptop-main.jpg" alt="Content calendar view" loading="lazy" />
+    </div>
+    <div class="fproc-card">
+      <span class="fproc-meta">02 · Ship</span>
+      <h3>Shorts &amp; YouTube pipelines</h3>
+      <p>Dedicated boards for Shorts ideation and long-form YouTube production — from hook to thumbnail to publish.</p>
+      <img src="creator-studio-assets/laptop-shorts.jpg" alt="Shorts pipeline view" loading="lazy" />
+    </div>
+    <div class="fproc-card">
+      <span class="fproc-meta">03 · Track</span>
+      <h3>Finance &amp; brand deals</h3>
+      <p>Every invoice, sponsorship and expense tracked in one view — so you always know what's due, paid, and in the pipeline.</p>
+      <img src="creator-studio-assets/laptop-finance.jpg" alt="Finance tracker view" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- PACK + FAQ -->
+<section class="facet-info">
+  <div class="facet-info-col">
+    <h2>What's <em>inside.</em></h2>
+    <ul class="fpack-list">
+      <li>
+        <span class="fpack-num">01</span>
+        <div>
+          <strong>Command-center dashboard</strong>
+          <p>Goals, weekly calendar, quick actions and productivity tracker — everything you need on one screen.</p>
+        </div>
+      </li>
+      <li>
+        <span class="fpack-num">02</span>
+        <div>
+          <strong>YouTube &amp; Shorts pipelines</strong>
+          <p>Production boards for long-form and short-form — title, hook, thumbnail, script, status and publish date.</p>
+        </div>
+      </li>
+      <li>
+        <span class="fpack-num">03</span>
+        <div>
+          <strong>Brand deals &amp; partnerships</strong>
+          <p>Track inbound partnerships, contracts, deliverables and payments — so no deal slips through.</p>
+        </div>
+      </li>
+      <li>
+        <span class="fpack-num">04</span>
+        <div>
+          <strong>Finance tracker</strong>
+          <p>Revenue, expenses and invoices in one place — with views for this month, this year and all-time.</p>
+        </div>
+      </li>
+      <li>
+        <span class="fpack-num">05</span>
+        <div>
+          <strong>Ideas, to-dos &amp; overview</strong>
+          <p>Capture, rank and ship ideas. Daily to-do list and a high-level overview of where the business stands.</p>
+        </div>
+      </li>
+      <li>
+        <span class="fpack-num">06</span>
+        <div>
+          <strong>Lifetime updates</strong>
+          <p>New views and refinements added as Creator Studio evolves — you get them all, free, forever.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="facet-info-col">
+    <h2>Questions, <em>answered.</em></h2>
+    <div class="ffaq-list">
+      <div class="ffaq-item">
+        <button class="ffaq-q" aria-expanded="false">Do I need a paid Notion account? <span class="ffaq-icon">+</span></button>
+        <div class="ffaq-a"><div class="ffaq-a-inner"><p>No. Creator Studio works on the free Notion plan. A paid plan only matters if you invite collaborators with permissions beyond guest access.</p></div></div>
+      </div>
+      <div class="ffaq-item">
+        <button class="ffaq-q" aria-expanded="false">How do I get it into my Notion? <span class="ffaq-icon">+</span></button>
+        <div class="ffaq-a"><div class="ffaq-a-inner"><p>You'll get a duplicate link after purchase. Click it, hit "Duplicate" in the top-right, and the full workspace drops into your Notion — yours to edit.</p></div></div>
+      </div>
+      <div class="ffaq-item">
+        <button class="ffaq-q" aria-expanded="false">Does it work on iPad and iPhone? <span class="ffaq-icon">+</span></button>
+        <div class="ffaq-a"><div class="ffaq-a-inner"><p>Yes. Every view is designed to work in the Notion mobile and tablet apps — dashboards, calendars and trackers scale cleanly across devices.</p></div></div>
+      </div>
+      <div class="ffaq-item">
+        <button class="ffaq-q" aria-expanded="false">Can I customise it? <span class="ffaq-icon">+</span></button>
+        <div class="ffaq-a"><div class="ffaq-a-inner"><p>Absolutely. Once duplicated it's your workspace — add views, rename properties, rewire databases, remove anything you don't use.</p></div></div>
+      </div>
+      <div class="ffaq-item">
+        <button class="ffaq-q" aria-expanded="false">Do I get future updates? <span class="ffaq-icon">+</span></button>
+        <div class="ffaq-a"><div class="ffaq-a-inner"><p>Yes. Lifetime updates are included — any new views or refinements added to Creator Studio are yours at no extra cost.</p></div></div>
+      </div>
+      <div class="ffaq-item">
+        <button class="ffaq-q" aria-expanded="false">Refunds? <span class="ffaq-icon">+</span></button>
+        <div class="ffaq-a"><div class="ffaq-a-inner"><p>Due to the digital nature of the product, all sales are final. If something's wrong with your duplicate, email me and I'll sort it.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY -->
+<section class="facet-buy" id="buy">
+  <div class="facet-buy-left">
+    <h2>One workspace.<br><em>Your whole creator business.</em></h2>
+    <p>Pay once. Duplicate into your Notion in two clicks. Run content, shorts, brand deals, finance and ideas from one place — with lifetime updates included.</p>
+  </div>
+  <div class="facet-buy-card">
+    <div class="fbuy-price">
+      <span class="fbuy-currency">€</span><span class="fbuy-num">35</span>
+    </div>
+    <div class="fbuy-meta">One-time payment</div>
+    <ul class="fbuy-list">
+      <li><span>10+ views</span><span>included</span></li>
+      <li><span>Desktop · tablet · phone</span><span>responsive</span></li>
+      <li><span>Free Notion account</span><span>works</span></li>
+      <li><span>Lifetime updates</span><span>free</span></li>
+      <li><span>Personal license</span><span>your workspace</span></li>
+    </ul>
+    <a href="https://blackjacktek.gumroad.com/l/CreatorStudio" target="_blank" rel="noopener" class="btn btn-primary btn-lg fbuy-btn">Get on Gumroad →</a>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="facet-cta">
+  <h2>One workspace. <em>Zero chaos.</em></h2>
+  <p>Pay once, duplicate into your Notion, and stop juggling apps to run your creator business.</p>
+  <a href="https://blackjacktek.gumroad.com/l/CreatorStudio" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Get Creator Studio — €35 →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <span class="footer-logo">
+      <img class="footer-logo-img footer-logo-light" src="brand/blackjacktek-full-color.svg" alt="Blackjacktek" />
+      <img class="footer-logo-img footer-logo-dark" src="brand/blackjacktek-full-knockout.svg" alt="Blackjacktek" />
+    </span>
+    <nav class="footer-nav">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://youtube.com/@blackjacktek" target="_blank" rel="noopener">YouTube</a>
+      <a href="http://instagram.com/BlackjackTek" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://vm.tiktok.com/ZMNUq7fxf/" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://mobile.twitter.com/_BlackjackTek_" target="_blank" rel="noopener">X / Twitter</a>
+      <a href="https://www.facebook.com/people/BlackjackTek/100080445494729/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <span>© 2026 Blackjacktek. All rights reserved.</span>
+    <button class="theme-toggle" id="theme-toggle-foot" aria-label="Toggle theme">🌙</button>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  function applyTheme(t){
+    document.documentElement.setAttribute('data-theme',t);
+    localStorage.setItem('theme',t);
+    document.querySelectorAll('.theme-toggle').forEach(b=>{ b.textContent = t==='dark' ? '🌙' : '🌞'; });
+  }
+  applyTheme(document.documentElement.getAttribute('data-theme'));
+  document.querySelectorAll('.theme-toggle').forEach(b=>{
+    b.addEventListener('click',()=>{
+      applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.ffaq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item = btn.closest('.ffaq-item');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', item.classList.contains('open'));
+    });
+  });
+
+  // Gallery → hero swap
+  const heroMockup = document.getElementById('cs-hero-mockup');
+  document.querySelectorAll('.facet-card').forEach(card=>{
+    card.addEventListener('click',()=>{
+      const src = card.dataset.src;
+      const name = card.dataset.name;
+      if (!src || !heroMockup) return;
+      const img = new Image();
+      img.onload = () => {
+        heroMockup.style.opacity = '0';
+        setTimeout(()=>{
+          heroMockup.src = img.src;
+          heroMockup.alt = `Creator Studio on ${name}`;
+          heroMockup.style.opacity = '1';
+        }, 180);
+      };
+      img.src = src;
+      document.querySelectorAll('.facet-card').forEach(c=>c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
