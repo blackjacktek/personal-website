@@ -861,6 +861,21 @@ h3 { font-weight: 600; }
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
   margin-bottom: 80px;
 }
+.cs-gallery-head {
+  display: flex; align-items: baseline; gap: 16px;
+  margin: 0 0 20px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.cs-gallery-head h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 28px; font-weight: 400; letter-spacing: -.01em;
+  color: var(--text1);
+}
+.cs-gallery-head span {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text2);
+}
 .facet-card {
   position: relative; border-radius: 14px; overflow: hidden;
   aspect-ratio: 16/9; background: var(--surface);
