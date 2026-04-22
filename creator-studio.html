@@ -430,7 +430,7 @@
       return best;
     }
 
-    function update(){
+    function update(opts){
       const i = currentIndex();
       const slide = slides[i];
       if (!slide) return;
@@ -440,7 +440,10 @@
       if (countEl) countEl.textContent = `${i + 1} / ${slides.length}`;
       prev.disabled = i === 0;
       next.disabled = i === slides.length - 1;
-      swapHero(slide.dataset.src, slide.dataset.name);
+      // On the initial render we only want to set labels/counters, NOT swap the
+      // hero — otherwise the last carousel to initialise would overwrite the
+      // Desktop default with its own first slide.
+      if (!opts || !opts.skipHero) swapHero(slide.dataset.src, slide.dataset.name);
     }
 
     function goTo(i){
@@ -465,7 +468,7 @@
       scrollTimer = setTimeout(update, 90);
     });
 
-    update();
+    update({ skipHero: true });
   });
 </script>
 
