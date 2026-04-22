@@ -71,96 +71,90 @@
 <!-- GALLERY -->
 <section class="facet-gallery plasma-gallery" id="gallery">
 
-  <div class="cs-gallery-head">
-    <h3>On Desktop</h3>
-    <span>Mac · Notion Web</span>
+  <div class="cs-tabs" role="tablist" aria-label="Preview device">
+    <button class="cs-tab active" data-device="desktop" role="tab" aria-selected="true">Desktop <span>Mac</span></button>
+    <button class="cs-tab" data-device="tablet" role="tab" aria-selected="false">Tablet <span>iPad</span></button>
+    <button class="cs-tab" data-device="mobile" role="tab" aria-selected="false">Mobile <span>iPhone</span></button>
   </div>
-  <div class="facet-gallery-grid plasma-grid">
-    <button class="facet-card active" data-src="creator-studio-assets/laptop-main.jpg" data-name="Desktop">
-      <img src="creator-studio-assets/laptop-main.jpg" alt="Creator Studio dashboard on Mac" loading="lazy" />
-      <div class="facet-card-label"><h3>Dashboard</h3><span>Command center</span></div>
+
+  <div class="cs-thumbs" data-device="desktop">
+    <button class="cs-thumb active" data-src="creator-studio-assets/laptop-main.jpg"        data-name="Desktop" data-label="Dashboard">
+      <img src="creator-studio-assets/laptop-main.jpg" alt="Dashboard on Mac" loading="lazy" />
+      <span class="cs-thumb-label">Dashboard</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/laptop-youtube.jpg" data-name="Desktop">
-      <img src="creator-studio-assets/laptop-youtube.jpg" alt="YouTube pipeline on Mac" loading="lazy" />
-      <div class="facet-card-label"><h3>YouTube</h3><span>Long-form pipeline</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/laptop-youtube.jpg"            data-name="Desktop" data-label="YouTube">
+      <img src="creator-studio-assets/laptop-youtube.jpg" alt="YouTube on Mac" loading="lazy" />
+      <span class="cs-thumb-label">YouTube</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/laptop-shorts.jpg" data-name="Desktop">
-      <img src="creator-studio-assets/laptop-shorts.jpg" alt="Shorts pipeline on Mac" loading="lazy" />
-      <div class="facet-card-label"><h3>Shorts</h3><span>Short-form pipeline</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/laptop-shorts.jpg"             data-name="Desktop" data-label="Shorts">
+      <img src="creator-studio-assets/laptop-shorts.jpg" alt="Shorts on Mac" loading="lazy" />
+      <span class="cs-thumb-label">Shorts</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/laptop-finance.jpg" data-name="Desktop">
-      <img src="creator-studio-assets/laptop-finance.jpg" alt="Finance tracker on Mac" loading="lazy" />
-      <div class="facet-card-label"><h3>Finance</h3><span>Revenue &amp; expenses</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/laptop-finance.jpg"            data-name="Desktop" data-label="Finance">
+      <img src="creator-studio-assets/laptop-finance.jpg" alt="Finance on Mac" loading="lazy" />
+      <span class="cs-thumb-label">Finance</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/laptop-partnerships.jpg" data-name="Desktop">
-      <img src="creator-studio-assets/laptop-partnerships.jpg" alt="Brand partnerships on Mac" loading="lazy" />
-      <div class="facet-card-label"><h3>Partnerships</h3><span>Brand deals</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/laptop-partnerships.jpg"       data-name="Desktop" data-label="Partnerships">
+      <img src="creator-studio-assets/laptop-partnerships.jpg" alt="Partnerships on Mac" loading="lazy" />
+      <span class="cs-thumb-label">Partnerships</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/laptop-ideas.jpg" data-name="Desktop">
-      <img src="creator-studio-assets/laptop-ideas.jpg" alt="Ideas board on Mac" loading="lazy" />
-      <div class="facet-card-label"><h3>Ideas</h3><span>Capture &amp; rank</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/laptop-ideas.jpg"              data-name="Desktop" data-label="Ideas">
+      <img src="creator-studio-assets/laptop-ideas.jpg" alt="Ideas on Mac" loading="lazy" />
+      <span class="cs-thumb-label">Ideas</span>
     </button>
   </div>
 
-  <div class="cs-gallery-head">
-    <h3>On Tablet</h3>
-    <span>iPad · Notion App</span>
-  </div>
-  <div class="facet-gallery-grid plasma-grid">
-    <button class="facet-card" data-src="creator-studio-assets/tablet-main.jpg" data-name="Tablet">
-      <img src="creator-studio-assets/tablet-main.jpg" alt="Creator Studio dashboard on iPad" loading="lazy" />
-      <div class="facet-card-label"><h3>Dashboard</h3><span>iPad · Portrait</span></div>
+  <div class="cs-thumbs" data-device="tablet" hidden>
+    <button class="cs-thumb" data-src="creator-studio-assets/tablet-main.jpg"               data-name="Tablet"  data-label="Dashboard">
+      <img src="creator-studio-assets/tablet-main.jpg" alt="Dashboard on iPad" loading="lazy" />
+      <span class="cs-thumb-label">Dashboard</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/tablet-alt.jpg" data-name="Tablet">
-      <img src="creator-studio-assets/tablet-alt.jpg" alt="Creator Studio on iPad with keyboard" loading="lazy" />
-      <div class="facet-card-label"><h3>Dashboard</h3><span>iPad · Landscape</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/tablet-alt.jpg"                data-name="Tablet"  data-label="Landscape">
+      <img src="creator-studio-assets/tablet-alt.jpg" alt="Dashboard on iPad — landscape" loading="lazy" />
+      <span class="cs-thumb-label">Landscape</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/tablet-youtube.jpg" data-name="Tablet">
-      <img src="creator-studio-assets/tablet-youtube.jpg" alt="YouTube pipeline on iPad" loading="lazy" />
-      <div class="facet-card-label"><h3>YouTube</h3><span>Long-form pipeline</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/tablet-youtube.jpg"            data-name="Tablet"  data-label="YouTube">
+      <img src="creator-studio-assets/tablet-youtube.jpg" alt="YouTube on iPad" loading="lazy" />
+      <span class="cs-thumb-label">YouTube</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/tablet-shorts.jpg" data-name="Tablet">
-      <img src="creator-studio-assets/tablet-shorts.jpg" alt="Shorts pipeline on iPad" loading="lazy" />
-      <div class="facet-card-label"><h3>Shorts</h3><span>Short-form pipeline</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/tablet-shorts.jpg"             data-name="Tablet"  data-label="Shorts">
+      <img src="creator-studio-assets/tablet-shorts.jpg" alt="Shorts on iPad" loading="lazy" />
+      <span class="cs-thumb-label">Shorts</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/tablet-finance.jpg" data-name="Tablet">
+    <button class="cs-thumb" data-src="creator-studio-assets/tablet-finance.jpg"            data-name="Tablet"  data-label="Finance">
       <img src="creator-studio-assets/tablet-finance.jpg" alt="Finance on iPad" loading="lazy" />
-      <div class="facet-card-label"><h3>Finance</h3><span>Revenue &amp; expenses</span></div>
+      <span class="cs-thumb-label">Finance</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/tablet-ideas.jpg" data-name="Tablet">
+    <button class="cs-thumb" data-src="creator-studio-assets/tablet-ideas.jpg"              data-name="Tablet"  data-label="Ideas">
       <img src="creator-studio-assets/tablet-ideas.jpg" alt="Ideas on iPad" loading="lazy" />
-      <div class="facet-card-label"><h3>Ideas</h3><span>Capture &amp; rank</span></div>
+      <span class="cs-thumb-label">Ideas</span>
     </button>
   </div>
 
-  <div class="cs-gallery-head">
-    <h3>On Mobile</h3>
-    <span>iPhone · Notion App</span>
-  </div>
-  <div class="facet-gallery-grid plasma-grid">
-    <button class="facet-card" data-src="creator-studio-assets/mobile-main.jpg" data-name="Mobile">
-      <img src="creator-studio-assets/mobile-main.jpg" alt="Creator Studio dashboard on iPhone" loading="lazy" />
-      <div class="facet-card-label"><h3>Dashboard</h3><span>On the shelf</span></div>
+  <div class="cs-thumbs" data-device="mobile" hidden>
+    <button class="cs-thumb" data-src="creator-studio-assets/mobile-main.jpg"               data-name="Mobile"  data-label="Dashboard">
+      <img src="creator-studio-assets/mobile-main.jpg" alt="Dashboard on iPhone — on the shelf" loading="lazy" />
+      <span class="cs-thumb-label">Dashboard</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/mobile-hand.jpg" data-name="Mobile">
+    <button class="cs-thumb" data-src="creator-studio-assets/mobile-hand.jpg"               data-name="Mobile"  data-label="In hand">
       <img src="creator-studio-assets/mobile-hand.jpg" alt="Creator Studio in hand on iPhone" loading="lazy" />
-      <div class="facet-card-label"><h3>Dashboard</h3><span>In the hand</span></div>
+      <span class="cs-thumb-label">In hand</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/mobile-dashboard.jpg" data-name="Mobile">
-      <img src="creator-studio-assets/mobile-dashboard.jpg" alt="Dashboard view on iPhone" loading="lazy" />
-      <div class="facet-card-label"><h3>Quick actions</h3><span>Dashboard view</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/mobile-dashboard.jpg"          data-name="Mobile"  data-label="Quick">
+      <img src="creator-studio-assets/mobile-dashboard.jpg" alt="Quick actions on iPhone" loading="lazy" />
+      <span class="cs-thumb-label">Quick</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/mobile-youtube.jpg" data-name="Mobile">
-      <img src="creator-studio-assets/mobile-youtube.jpg" alt="YouTube view on iPhone" loading="lazy" />
-      <div class="facet-card-label"><h3>YouTube</h3><span>Long-form pipeline</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/mobile-youtube.jpg"            data-name="Mobile"  data-label="YouTube">
+      <img src="creator-studio-assets/mobile-youtube.jpg" alt="YouTube on iPhone" loading="lazy" />
+      <span class="cs-thumb-label">YouTube</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/mobile-shorts.jpg" data-name="Mobile">
-      <img src="creator-studio-assets/mobile-shorts.jpg" alt="Shorts view on iPhone" loading="lazy" />
-      <div class="facet-card-label"><h3>Shorts</h3><span>Short-form pipeline</span></div>
+    <button class="cs-thumb" data-src="creator-studio-assets/mobile-shorts.jpg"             data-name="Mobile"  data-label="Shorts">
+      <img src="creator-studio-assets/mobile-shorts.jpg" alt="Shorts on iPhone" loading="lazy" />
+      <span class="cs-thumb-label">Shorts</span>
     </button>
-    <button class="facet-card" data-src="creator-studio-assets/mobile-finance.jpg" data-name="Mobile">
+    <button class="cs-thumb" data-src="creator-studio-assets/mobile-finance.jpg"            data-name="Mobile"  data-label="Finance">
       <img src="creator-studio-assets/mobile-finance.jpg" alt="Finance on iPhone" loading="lazy" />
-      <div class="facet-card-label"><h3>Finance</h3><span>Revenue &amp; expenses</span></div>
+      <span class="cs-thumb-label">Finance</span>
     </button>
   </div>
 
@@ -377,9 +371,26 @@
     });
   });
 
+  // Device tabs — show one thumbnail strip at a time
+  const tabs = document.querySelectorAll('.cs-tab');
+  const thumbStrips = document.querySelectorAll('.cs-thumbs');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      const device = tab.dataset.device;
+      tabs.forEach(t=>{
+        const sel = t === tab;
+        t.classList.toggle('active', sel);
+        t.setAttribute('aria-selected', sel);
+      });
+      thumbStrips.forEach(s=>{
+        s.hidden = s.dataset.device !== device;
+      });
+    });
+  });
+
   // Gallery → hero swap
   const heroMockup = document.getElementById('cs-hero-mockup');
-  document.querySelectorAll('.facet-card').forEach(card=>{
+  document.querySelectorAll('.cs-thumb').forEach(card=>{
     card.addEventListener('click',()=>{
       const src = card.dataset.src;
       const name = card.dataset.name;
@@ -394,7 +405,8 @@
         }, 180);
       };
       img.src = src;
-      document.querySelectorAll('.facet-card').forEach(c=>c.classList.remove('active'));
+      // Reset active only within the current device's strip
+      card.closest('.cs-thumbs').querySelectorAll('.cs-thumb').forEach(c=>c.classList.remove('active'));
       card.classList.add('active');
     });
   });
