@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="brand/favicon.png" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" type="image/png" href="/brand/favicon.png" />
   <script>
     (function(){
       const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');
@@ -374,17 +374,17 @@
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <a href="index.html" class="nav-logo">
-    <img class="nav-logo-img nav-logo-light" src="brand/blackjacktek-full-color.svg" alt="Blackjacktek" />
-    <img class="nav-logo-img nav-logo-dark" src="brand/blackjacktek-full-knockout.svg" alt="Blackjacktek" />
+  <a href="/" class="nav-logo">
+    <img class="nav-logo-img nav-logo-light" src="/brand/blackjacktek-full-color.svg" alt="Blackjacktek" />
+    <img class="nav-logo-img nav-logo-dark" src="/brand/blackjacktek-full-knockout.svg" alt="Blackjacktek" />
   </a>
   <ul class="nav-links">
-    <li><a href="index.html#shop">Shop</a></li>
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#work">Work</a></li>
-    <li><a href="index.html#pricing">Pricing</a></li>
-    <li><a href="index.html#gear">Affiliate</a></li>
-    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="/#shop">Shop</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/#gear">Affiliate</a></li>
+    <li><a href="/#faq">FAQ</a></li>
   </ul>
   <div class="nav-end">
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
@@ -490,14 +490,14 @@
 <footer class="footer">
   <div class="footer-bottom">
     <span class="footer-logo">
-      <img class="footer-logo-img footer-logo-light" src="brand/blackjacktek-full-color.svg" alt="Blackjacktek" />
-      <img class="footer-logo-img footer-logo-dark" src="brand/blackjacktek-full-knockout.svg" alt="Blackjacktek" />
+      <img class="footer-logo-img footer-logo-light" src="/brand/blackjacktek-full-color.svg" alt="Blackjacktek" />
+      <img class="footer-logo-img footer-logo-dark" src="/brand/blackjacktek-full-knockout.svg" alt="Blackjacktek" />
     </span>
     <nav class="footer-nav">
-      <a href="index.html#work">Work</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#pricing">Pricing</a>
-      <a href="index.html#faq">FAQ</a>
+      <a href="/#work">Work</a>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
     </nav>
     <div class="footer-social">
       <a href="https://youtube.com/@blackjacktek" target="_blank" rel="noopener">YouTube</a>
@@ -543,7 +543,7 @@
     { id: 'obsidian',  name: 'Obsidian',  sub: 'Monochrome · Dark' }
   ];
   const ROMAN = ['I','II','III','IV','V','VI','VII','VIII','IX'];
-  const imgSrc = p => `facet-assets/wallpapers/facet_${p.id}_desktop_7680x4320.jpg`;
+  const imgSrc = p => `/facet-assets/wallpapers/facet_${p.id}_desktop_7680x4320.jpg`;
 
   const heroPlates = document.getElementById('hero-plates');
   const tstrip = document.getElementById('tstrip');
