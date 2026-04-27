@@ -581,9 +581,9 @@
 
   // =========================================================
   // COUNTDOWN — fixed target, same for every visitor
-  // Launch: April 28 2026, 09:00 UTC
+  // Launch: April 28 2026, 11:00 AM Italy (CEST, UTC+2)
   // =========================================================
-  const LAUNCH = new Date('2026-04-28T09:00:00Z').getTime();
+  const LAUNCH = new Date('2026-04-28T11:00:00+02:00').getTime();
   function tick() {
     let diff = Math.max(0, LAUNCH - Date.now());
     const d = Math.floor(diff / 86400000); diff -= d * 86400000;
